@@ -125,7 +125,7 @@ def main(args):
             if file in full_schema_config['workbooks'].keys():
                 workbook_schema = full_schema_config['workbooks'][file]
                 try:
-                   logging.info(f"Publishing workbook : { workbook_schema['project_path']} + '/' + {workbook_schema['name'] } to Tableau")
+                    logging.info(f"Publishing workbook : { workbook_schema['project_path']} + '/' + {workbook_schema['name'] } to Tableau")
                     project_path, new_workbook = submit_workbook(workbook_schema,
                                                                  args.workbook_dir + "/" + file,
                                                                  args.env)
