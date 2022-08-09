@@ -5,7 +5,7 @@ on:
         - master
       types: [closed]
       paths:
-        - 'tableau_workbook/**'
+        - 'tests/workbooks/**'
 jobs:
   tableau-production-deployments:
     name: Tableau Workbook Production Deployments
@@ -18,11 +18,11 @@ jobs:
       - name: 'Tableau Workbook Deployments Action'
         uses: ./action/tableau-workbook-action
         env:
-          USERNAME: ${{ secrets.TABLEAU_DEPLOYMENT_USERNAME }}
-          PASSWORD: ${{ secrets.TABLEAU_DEPLOYMENT_PASSWORD }}
-          SITE_ID: ${{ secrets.TABLEAU_DEPLOYMENT_SITE_ID }}
-          TABLEAU_URL: ${{ secrets.TABLEAU_DEPLOYMENT_TABLEAU_URL }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          SITE_ID: ${{ secrets.SITE_ID }}
+          TABLEAU_URL: ${{ secrets.TABLEAU_URL }}
         with:
-          workbook_dir: tableau_workbook/workbooks
+          workbook_dir: tests/workbooks
           env: production
           repo_token: ${{ secrets.GITHUB_TOKEN }}

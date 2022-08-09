@@ -1,13 +1,7 @@
 workbooks:
     - name: film_workbook
-      file_path: film_workbook.twb
-      project_path: Dashboard/Film
-    - name: full_multi_view_workbook
-      file_path: film_workbook.twb
-      project_path: Dashboard/Film
-    - name: multi_view_workbook
-      file_path: film_workbook.twb
-      project_path: Dashboard/Film
+      file_path: film_workbooks.twb
+      project_path: tableau_test/test1
       option:
         tags:
           - sample
