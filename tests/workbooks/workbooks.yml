@@ -1,7 +1,7 @@
 workbooks:
     - name: film_workbook
       file_path: film_workbook.twb
-      project_path: test_tableau
+      project_path: test_tableau/test1
       option:
         tags:
           - sample
