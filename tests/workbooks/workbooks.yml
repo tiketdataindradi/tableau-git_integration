@@ -1,6 +1,6 @@
 workbooks:
     - name: testing_1
-      file_path: extract_monitor.twb
+      file_path: wextract_monitor.twb
       project_path: tableau_git/contoh_1
       option:
         tags:
