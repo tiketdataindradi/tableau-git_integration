@@ -1,6 +1,6 @@
 workbooks:
     - name: testing_1
-      file_path: testing_1.twb
+      file_path: ing_1.twb
       project_path: tableau_git/contoh_1
       option:
         tags:
