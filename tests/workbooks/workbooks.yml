@@ -1,13 +1,14 @@
 workbooks:
     - name: testing_1
-      file_path: 1_extract_monitor.twb
+      file_path: extract_monitor.twb
       project_path: tableau_git/contoh_1
       option:
         tags:
           - sample
           - temp
         hidden_views:
-        - No Succeeded Extract Today
+        - Sheet 21
+        - Details Item (2)
         show_tabs: true
         description: Sample description
 
