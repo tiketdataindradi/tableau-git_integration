@@ -114,7 +114,7 @@ def main(args):
 
     addmodified_files = get_addmodified_files(args.repo_token)
     logging.info(addmodified_files)
-    addmodified_files = [file.split(args.workbook_dir)[1] for file in addmodified_files if args.workbook_dir in file and ".twb" in file]
+    addmodified_files = [file.split(args.workbook_dir+'/')[1] for file in addmodified_files if args.workbook_dir in file and ".twb" in file]
 
     if len(addmodified_files) > 0:
         logging.info("Add & Modified Files:")
