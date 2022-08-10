@@ -113,6 +113,7 @@ def main(args):
     full_schema_config = get_full_schema(args.workbook_dir)
 
     addmodified_files = get_addmodified_files(args.repo_token)
+    logging.info(addmodified_files)
     addmodified_files = [file.lstrip(args.workbook_dir) for file in addmodified_files if args.workbook_dir in file and ".twb" in file]
 
     if len(addmodified_files) > 0:
