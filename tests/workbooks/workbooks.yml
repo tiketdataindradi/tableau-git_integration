@@ -9,6 +9,6 @@ workbooks:
         hidden_views:
         - Sheet 21
         - Details Item (2)
-        show_tabs: false
+        show_tabs: true
         description: Sample description
 
