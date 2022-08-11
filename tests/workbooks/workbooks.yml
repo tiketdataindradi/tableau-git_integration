@@ -11,4 +11,14 @@ workbooks:
         - Details Item (2)
         show_tabs: true
         description: Sample description
+    - name: testing_2
+      file_path: nrt_gbv_hotel.twb
+      project_path: tableau_git/contoh_1
+      option:
+        tags:
+          - gbv hotel
+          - nrt
+        hidden_views:
+        show_tabs: true
+        description: Sample description
 
