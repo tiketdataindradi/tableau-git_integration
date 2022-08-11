@@ -4,11 +4,11 @@ workbooks:
       project_path: tableau_git/contoh_1
       option:
         tags:
-          - sample
-          - temp
+          - extract
+          - refresh
         hidden_views:
         - Sheet 21
         - Details Item (2)
-        show_tabs: true
+        show_tabs: false
         description: Sample description
 
