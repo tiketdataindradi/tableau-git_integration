@@ -1,19 +1,50 @@
 workbooks:
-    - name: film_workbook
-      file_path: film_workbook.twb
-      project_path: Dashboard/Film
-    - name: full_multi_view_workbook
-      file_path: film_workbook.twb
-      project_path: Dashboard/Film
-    - name: multi_view_workbook
-      file_path: film_workbook.twb
-      project_path: Dashboard/Film
+    - name: testing_1
+      file_path: testing_1.twbx
+      project_path: tableau_git/contoh_1
       option:
         tags:
-          - sample
-          - temp
+          - extract
+          - refresh
         hidden_views:
-          - Event by day
+        - Sheet 21
+        - Details Item (2)
+        show_tabs: true
+        description: Sample description
+    - name: testing_2
+      file_path: nrt_gbv_hotel.twbx
+      project_path: tableau_git/contoh_1
+      option:
+        tags:
+          - gbv hotel
+          - nrt
+          - test
+        hidden_views:
+        show_tabs: true
+        description: Sample description
+    - name: testing_3
+      file_path: Channel  payment.twbx
+      project_path: tableau_git/contoh_1
+      option:
+        tags:
+          - payment
+          - channel
+          - test
+        hidden_views:
+        - Payment Group
+        - All Payment Source (2)
+        - Detail
+        - Sheet 18
+        show_tabs: true
+        description: Sample description
+    - name: testing_4
+      file_path: testing_4.twbx
+      project_path: tableau_git/contoh_1
+      option:
+        tags:
+          - event
+          - test
+        hidden_views:
         show_tabs: true
         description: Sample description
 

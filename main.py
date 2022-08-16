@@ -113,7 +113,8 @@ def main(args):
     full_schema_config = get_full_schema(args.workbook_dir)
 
     addmodified_files = get_addmodified_files(args.repo_token)
-    addmodified_files = [file.lstrip(args.workbook_dir) for file in addmodified_files if args.workbook_dir in file and ".twb" in file]
+    logging.info(addmodified_files)
+    addmodified_files = [file.split(args.workbook_dir+'/')[1] for file in addmodified_files if args.workbook_dir in file and ".twb" in file]
 
     if len(addmodified_files) > 0:
         logging.info("Add & Modified Files:")
@@ -125,7 +126,7 @@ def main(args):
             if file in full_schema_config['workbooks'].keys():
                 workbook_schema = full_schema_config['workbooks'][file]
                 try:
-                    logging.info("Publishing workbook : { workbook_schema['project_path'] + '/' + workbook_schema['name'] } to Tableau")
+                    logging.info(f"Publishing workbook : { workbook_schema['project_path'] + '/' + workbook_schema['name'] } to Tableau")
                     project_path, new_workbook = submit_workbook(workbook_schema,
                                                                  args.workbook_dir + "/" + file,
                                                                  args.env)
