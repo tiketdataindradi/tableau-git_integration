@@ -23,12 +23,12 @@ workbooks:
         show_tabs: true
         description: Sample description
     - name: testing_3
-      file_path: nrt_gbv_hotel.twb
+      file_path: Channel -ayment.twbx
       project_path: tableau_git/contoh_1
       option:
         tags:
-          - gbv hotel
-          - nrt
+          - payment
+          - channel
           - test
         hidden_views:
         show_tabs: true
