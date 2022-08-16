@@ -23,7 +23,7 @@ workbooks:
         show_tabs: true
         description: Sample description
     - name: testing_3
-      file_path: Channel payment.twbx
+      file_path: Channel  payment.twbx
       project_path: tableau_git/contoh_1
       option:
         tags:
