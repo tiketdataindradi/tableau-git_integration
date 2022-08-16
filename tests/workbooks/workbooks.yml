@@ -22,4 +22,25 @@ workbooks:
         hidden_views:
         show_tabs: true
         description: Sample description
+    - name: testing_3
+      file_path: nrt_gbv_hotel.twb
+      project_path: tableau_git/contoh_1
+      option:
+        tags:
+          - gbv hotel
+          - nrt
+          - test
+        hidden_views:
+        show_tabs: true
+        description: Sample description
+    - name: testing_4
+      file_path: wextract_monitor.twb
+      project_path: tableau_git/contoh_1
+      option:
+        tags:
+          - extract
+          - test
+        hidden_views:
+        show_tabs: true
+        description: Sample description
 
