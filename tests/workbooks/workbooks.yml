@@ -18,6 +18,7 @@ workbooks:
         tags:
           - gbv hotel
           - nrt
+          - test
         hidden_views:
         show_tabs: true
         description: Sample description
