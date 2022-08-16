@@ -34,11 +34,11 @@ workbooks:
         show_tabs: true
         description: Sample description
     - name: testing_4
-      file_path: wextract_monitor.twb
+      file_path: testing_4.twbx
       project_path: tableau_git/contoh_1
       option:
         tags:
-          - extract
+          - event
           - test
         hidden_views:
         show_tabs: true
