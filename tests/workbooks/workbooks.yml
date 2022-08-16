@@ -31,6 +31,10 @@ workbooks:
           - channel
           - test
         hidden_views:
+        - Payment Group
+        - All Payment Source (2)
+        - Detail
+        - Sheet 18
         show_tabs: true
         description: Sample description
     - name: testing_4
