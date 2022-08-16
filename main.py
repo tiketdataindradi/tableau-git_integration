@@ -72,6 +72,9 @@ def get_addmodified_files(repo_token):
 def submit_workbook(workbook_schema, file_path, env):
     if env != 'production':
         project_path = 'staging/' + workbook_schema['project_path']
+    
+    else: 
+        project_path = workbook_schema['project_path']
 
     tableau_api = TableauApi(os.environ['USERNAME'],
                             os.environ['PASSWORD'],
