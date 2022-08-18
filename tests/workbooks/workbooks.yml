@@ -11,8 +11,8 @@ workbooks:
         - Details Item (2)
         show_tabs: true
         description: Sample description
-    - name: NRT Hotel GBV
-      file_path: nrt_gbv_hotel_2.twbx
+    - name: Hotel GBV
+      file_path: nrt_gbv_hotel.twbx
       project_path: tableau_git/contoh_1 
       option:
         tags:
