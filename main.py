@@ -133,8 +133,12 @@ def main(args):
                     project_path, new_workbook = submit_workbook(workbook_schema,
                                                                  args.workbook_dir + "/" + file,
                                                                  args.env)
-                    logging.info(f"Workbook : { workbook_schema['name']} Published to Tableau")
-                    list_message.append(f"Workbook : {workbook_schema['name']} published to Tableau  :heavy_check_mark:")
+                    if args.env != 'production':
+                        logging.info(f"Workbook : { workbook_schema['name']} Published to Tableau folder Staging")
+                        list_message.append(f"Workbook : {workbook_schema['name']} published to Tableau folder Staging :heavy_check_mark:")
+                    else: 
+                        logging.info(f"Workbook : { workbook_schema['name']} Published to Tableau Server")
+                        list_message.append(f"Workbook : {workbook_schema['name']} published to Tableau Server  :heavy_check_mark:")
                 except Exception as e:
                     logging.info(f"Error publishing workbook { workbook_schema['name'] }")
                     logging.error(e)
