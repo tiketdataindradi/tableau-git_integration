@@ -1,19 +1,7 @@
 workbooks:
-    - name: testing_1
-      file_path: testing_1.twbx
-      project_path: tableau_git/contoh_1
-      option:
-        tags:
-          - extract
-          - refresh
-        hidden_views:
-        - Sheet 21
-        - Details Item (2)
-        show_tabs: true
-        description: Sample description
-    - name: Hotel GBV
-      file_path: nrt_gbv_hotel.twbx
-      project_path: tableau_git/contoh_1 
+    - name: Hotel GBV test
+      file_path: nrt_gbv_hotel_2.twbx
+      project_path: contoh_1 
       option:
         tags:
           - gbv hotel
@@ -23,29 +11,4 @@ workbooks:
         - gbv per city
         show_tabs: true
         description: Sample description
-    - name: testing_3
-      file_path: Channel  payment.twbx
-      project_path: tableau_git/contoh_1
-      option:
-        tags:
-          - payment
-          - channel
-          - test
-        hidden_views:
-        - Payment Group
-        - All Payment Source (2)
-        - Detail
-        - Sheet 18
-        show_tabs: true
-        description: Sample description
-    - name: testing_4
-      file_path: testing_4.twbx
-      project_path: tableau_git/contoh_1
-      option:
-        tags:
-          - event
-          - test
-        hidden_views:
-        show_tabs: true
-        description: Sample description
-
+    
