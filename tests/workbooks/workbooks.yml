@@ -1,18 +1,6 @@
 workbooks:
-    - name: testing_1
-      file_path: testing_1.twbx
-      project_path: tableau_git/contoh_1
-      option:
-        tags:
-          - extract
-          - refresh
-        hidden_views:
-        - Sheet 21
-        - Details Item (2)
-        show_tabs: true
-        description: Sample description
-    - name: Hotel GBV
-      file_path: nrt_gbv_hotel.twbx
+    - name: Hotel GBV test
+      file_path: nrt_gbv_hotel_2.twbx
       project_path: tableau_git/contoh_1 
       option:
         tags:
@@ -22,30 +10,47 @@ workbooks:
         hidden_views:
         - gbv per city
         show_tabs: true
-        description: Sample description
-    - name: testing_3
-      file_path: Channel  payment.twbx
-      project_path: tableau_git/contoh_1
+        
+    - name: Hourly monitoring
+      file_path: Hourly Campaign Monitoring.twbx
+      project_path: tableau_git/contoh_1 
       option:
         tags:
-          - payment
-          - channel
+          - Indradi 
+          - nrt
           - test
         hidden_views:
-        - Payment Group
-        - All Payment Source (2)
-        - Detail
-        - Sheet 18
+          - note flight
+          - Flight Hourly (2)
+          - Top Event and Non Event (2)
+          - Run Rate total
+          - Run Rate
+          - TTD Hourly Order - Event
+          - TTD Hourly COst - Event
+          - TTD Hourly GBV - Event
+          - Hotel Hourly GBV (3)
+          - TTD Daily
+          - TTD Daily (2)
+          - TTD Daily (3)
+          - TTD Daily (4)
+          - Sheet 2
+          - Sheet 27
+          - Sheet 27 (2)
+          - run rate 2
         show_tabs: true
-        description: Sample description
-    - name: testing_4
-      file_path: testing_4.twbx
-      project_path: tableau_git/contoh_1
+        
+    - name: Finance Omset Event
+      file_path: Finance Admin - Omset Event.twbx
+      project_path: tableau_git/contoh_1 
       option:
         tags:
-          - event
+          - Adi
+          - finance
           - test
         hidden_views:
+        - Omset Event Details
         show_tabs: true
-        description: Sample description
-
+        
+    
+        
+    
