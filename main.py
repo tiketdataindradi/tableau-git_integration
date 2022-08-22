@@ -98,13 +98,23 @@ def submit_workbook(workbook_schema, file_path, env):
         tags = workbook_schema['option']['tags'] if 'tags' in workbook_schema['option'] else None
         description = workbook_schema['option']['description'] if 'description' in workbook_schema['option'] else None
 
-    new_workbook = tableau_api.publish_workbook(name =  workbook_schema['name'],
-                                                project_id = project_id,
-                                                file_path = file_path,
-                                                hidden_views = hidden_views,
-                                                show_tabs = show_tabs,
-                                                tags = tags,
-                                                description = description)
+    if env != 'production':
+        new_workbook = tableau_api.publish_workbook(name =  'TESTING' + workbook_schema['name'],
+                                                    project_id = project_id,
+                                                    file_path = file_path,
+                                                    hidden_views = hidden_views,
+                                                    show_tabs = show_tabs,
+                                                    tags = tags,
+                                                    description = description)
+    
+    else: 
+        new_workbook = tableau_api.publish_workbook(name =  workbook_schema['name'],
+                                                    project_id = project_id,
+                                                    file_path = file_path,
+                                                    hidden_views = hidden_views,
+                                                    show_tabs = show_tabs,
+                                                    tags = tags,
+                                                    description = description)
 
     return project_path, new_workbook
 
