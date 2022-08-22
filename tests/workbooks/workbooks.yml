@@ -10,7 +10,47 @@ workbooks:
         hidden_views:
         - gbv per city
         show_tabs: true
-        description: Sample description
+        
+    - name: Hourly monitoring
+      file_path: Hourly Campaign Monitoring.twbx
+      project_path: tableau_git/contoh_1 
+      option:
+        tags:
+          - Indradi 
+          - nrt
+          - test
+        hidden_views:
+          - note flight
+          - Flight Hourly (2)
+          - Top Event and Non Event (2)
+          - Run Rate total
+          - Run Rate
+          - TTD Hourly Order - Event
+          - TTD Hourly COst - Event
+          - TTD Hourly GBV - Event
+          - Hotel Hourly GBV (3)
+          - TTD Daily
+          - TTD Daily (2)
+          - TTD Daily (3)
+          - TTD Daily (4)
+          - Sheet 2
+          - Sheet 27
+          - Sheet 27 (2)
+          - run rate 2
+        show_tabs: true
+        
+    - name: Finance Omset Event
+      file_path: Finance Admin - Omset Event.twbx
+      project_path: tableau_git/contoh_1 
+      option:
+        tags:
+          - Adi
+          - finance
+          - test
+        hidden_views:
+        - Omset Event Details
+        show_tabs: true
+        
     
         
     
