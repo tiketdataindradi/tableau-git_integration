@@ -156,7 +156,7 @@ def main(args):
                     status = False
             else:
                 logging.info(f"Skip publishing workbook { file } not listed in config files")
-                list_message.append(f"Skip publishing workbook { file.split('.')[1]} not listed in config files")
+                list_message.append(f"Skip publishing workbook { file.split('.')[0]} not listed in config files")
 
         comment_pr(args.repo_token, "\n".join(list_message))
         if status is False:
