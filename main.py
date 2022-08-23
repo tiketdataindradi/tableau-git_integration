@@ -155,7 +155,9 @@ def main(args):
                     list_message.append(f"Workbook : { workbook_schema['name'] } not published to Tableau   :x:")
                     status = False
             else:
+                workbook_schema = full_schema_config['workbooks'][file]
                 logging.info(f"Skip publishing workbook { workbook_schema['name'] } not listed in config files")
+                list_message.append(f"Skip publishing workbook { workbook_schema['name'] } not listed in config files")
 
         comment_pr(args.repo_token, "\n".join(list_message))
         if status is False:
