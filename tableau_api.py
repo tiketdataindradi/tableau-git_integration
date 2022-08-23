@@ -133,7 +133,7 @@ class TableauApi:
             max_index = max_index + 1
 
         for i in range(max_index, len(project_path_split)):
-            logging.info("Creating Project within path : { '/'.join(project_path_split[:i+1]) }")
+            logging.info(f"Creating Project within path : { '/'.join(project_path_split[:i+1]) }")
             new_project = TSC.ProjectItem(project_path_split[i],
                                           description=None,
                                           content_permissions=TSC.ProjectItem.ContentPermissions.ManagedByOwner,

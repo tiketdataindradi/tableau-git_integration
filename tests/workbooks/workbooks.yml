@@ -40,8 +40,8 @@ workbooks:
         show_tabs: true
         
     - name: Finance Omset Event
-      file_path: Finance Admin.twbx
-      project_path: tableau_git/contoh_1 
+      file_path: Finance Admin Event.twbx
+      project_path: tableau_git/contoh_2 
       option:
         tags:
           - Adi
@@ -49,6 +49,17 @@ workbooks:
           - test
         hidden_views:
         - Omset Event Details
+        show_tabs: true
+    - name: wb embedded
+      file_path: wb_embedded_data.twbx
+      project_path: tableau_git/contoh_2 
+      option:
+        tags:
+          - test twb
+          - finance
+          - test
+        hidden_views:
+      
         show_tabs: true
         
     

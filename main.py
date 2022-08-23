@@ -155,7 +155,9 @@ def main(args):
                     list_message.append(f"Workbook : { workbook_schema['name'] } not published to Tableau   :x:")
                     status = False
             else:
-                logging.info(f"Skip publishing workbook { workbook_schema['name'] } not listed in config files")
+                logging.info(f"Skip publishing workbook { file } not listed in config files")
+                list_message.append(f"Skip publishing workbook { file.split('.')[0]}, because not listed in config files  :x:")
+                list_message.append("Make sure workbook name in config file (workbooks.yml) is correct and uploaded file is in .twbx format")
 
         comment_pr(args.repo_token, "\n".join(list_message))
         if status is False:
