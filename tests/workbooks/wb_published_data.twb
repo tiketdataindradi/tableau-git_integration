@@ -3,12 +3,15 @@
 <!-- build 20221.22.0516.1720                               -->
 <workbook original-version='18.1' source-build='2022.1.2 (20221.22.0516.1720)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
     <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <ISO8601DefaultCalendarPref />
     <_.fcp.MarkAnimation.true...MarkAnimation />
     <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
-    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
     <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
     <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
     <SheetIdentifierTracking />
     <WindowsPersistSimpleIdentifiers />
   </document-format-change-manifest>
@@ -22,245 +25,271 @@
     </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
   </_.fcp.AnimationOnByDefault.false...style>
   <datasources>
-    <datasource caption='airport_master (galaxy_dwh)' inline='true' name='federated.1wfunof1tbqbew10ivenv1sfmpfo' version='18.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='BigQuery' name='bigquery.1rij9ek0u9u3ae17hcy5z0jd33nf'>
-            <connection CATALOG='prod-datarangers' EXECCATALOG='dwh-datarangers' authentication='oauth' class='bigquery' connection-dialect='google-sql' project='prod-datarangers' schema='galaxy_dwh' server-oauth='' username='indradi.maulana@tiket.com' />
-          </named-connection>
-        </named-connections>
-        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='bigquery.1rij9ek0u9u3ae17hcy5z0jd33nf' name='airport_master' table='[prod-datarangers.galaxy_dwh].[airport_master]' type='table' />
-        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='bigquery.1rij9ek0u9u3ae17hcy5z0jd33nf' name='airport_master' table='[prod-datarangers.galaxy_dwh].[airport_master]' type='table' />
+    <datasource caption='airport_master (galaxy_dwh)' inline='true' name='sqlproxy.0nuugn41ygabdy1glbjj91l924ap' version='18.1'>
+      <repository-location id='airport_mastergalaxy_dwh_16608142083690' path='/datasources' revision='1.0' />
+      <connection channel='https' class='sqlproxy' dbname='airport_mastergalaxy_dwh_16608142083690' directory='/dataserver' port='443' server='kagebunshin.kepo.ninja' username=''>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='sqlproxy' table='[sqlproxy]' type='table' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='sqlproxy' table='[sqlproxy]' type='table' />
         <metadata-records>
           <metadata-record class='column'>
-            <remote-name>business_id</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[business_id]</local-name>
-            <parent-name>[airport_master]</parent-name>
-            <remote-alias>business_id</remote-alias>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
+            <remote-name>airport_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[airport_code]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>airport_code</remote-alias>
+            <ordinal>2</ordinal>
+            <layered>true</layered>
+            <caption>Airport Code</caption>
+            <family>airport_master</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
+            <collation flag='0' name='LROOT' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
             <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>airport_name</remote-name>
-            <remote-type>130</remote-type>
+            <remote-type>129</remote-type>
             <local-name>[airport_name]</local-name>
-            <parent-name>[airport_master]</parent-name>
+            <parent-name>[sqlproxy]</parent-name>
             <remote-alias>airport_name</remote-alias>
+            <ordinal>1</ordinal>
+            <layered>true</layered>
+            <caption>Airport Name</caption>
+            <family>airport_master</family>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
+            <collation flag='0' name='LROOT' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
             <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>airport_code</remote-name>
-            <remote-type>130</remote-type>
-            <local-name>[airport_code]</local-name>
-            <parent-name>[airport_master]</parent-name>
-            <remote-alias>airport_code</remote-alias>
-            <local-type>string</local-type>
+            <remote-name>business_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[business_id]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>business_id</remote-alias>
+            <ordinal>0</ordinal>
+            <layered>true</layered>
+            <caption>Business Id</caption>
+            <family>airport_master</family>
+            <local-type>integer</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>location_name</remote-name>
-            <remote-type>130</remote-type>
-            <local-name>[location_name]</local-name>
-            <parent-name>[airport_master]</parent-name>
-            <remote-alias>location_name</remote-alias>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>country_id</remote-name>
-            <remote-type>130</remote-type>
-            <local-name>[country_id]</local-name>
-            <parent-name>[airport_master]</parent-name>
-            <remote-alias>country_id</remote-alias>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>country_name</remote-name>
-            <remote-type>130</remote-type>
-            <local-name>[country_name]</local-name>
-            <parent-name>[airport_master]</parent-name>
-            <remote-alias>country_name</remote-alias>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
             <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>city_name</remote-name>
-            <remote-type>130</remote-type>
+            <remote-type>129</remote-type>
             <local-name>[city_name]</local-name>
-            <parent-name>[airport_master]</parent-name>
+            <parent-name>[sqlproxy]</parent-name>
             <remote-alias>city_name</remote-alias>
+            <ordinal>6</ordinal>
+            <layered>true</layered>
+            <caption>City Name</caption>
+            <family>airport_master</family>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
+            <collation flag='0' name='LROOT' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country_id]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>country_id</remote-alias>
+            <ordinal>4</ordinal>
+            <layered>true</layered>
+            <caption>Country Id</caption>
+            <family>airport_master</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LROOT' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country_name]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>country_name</remote-alias>
+            <ordinal>5</ordinal>
+            <layered>true</layered>
+            <caption>Country Name</caption>
+            <family>airport_master</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LROOT' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>location_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[location_name]</local-name>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias>location_name</remote-alias>
+            <ordinal>3</ordinal>
+            <layered>true</layered>
+            <caption>Location Name</caption>
+            <family>airport_master</family>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LROOT' />
+            <attributes>
+              <attribute datatype='integer' name='field-type'>2</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
             <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>processed_dttm</remote-name>
-            <remote-type>7</remote-type>
+            <remote-type>135</remote-type>
             <local-name>[processed_dttm]</local-name>
-            <parent-name>[airport_master]</parent-name>
+            <parent-name>[sqlproxy]</parent-name>
             <remote-alias>processed_dttm</remote-alias>
+            <ordinal>7</ordinal>
+            <layered>true</layered>
+            <caption>Processed Dttm</caption>
+            <family>airport_master</family>
             <local-type>datetime</local-type>
             <aggregation>Year</aggregation>
             <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='field-type'>1</attribute>
+              <attribute datatype='integer' name='role'>0</attribute>
+            </attributes>
             <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[sqlproxy]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='boolean' name='CAP_CREATE_TEMP_TABLES'>true</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_BLENDING_ALWAYS_USE_LOCAL_MAPPING_TABLES'>false</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_BLENDING_PREFER_LOCAL_MAPPING_TABLES'>true</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_BLENDING_REMOTE_MAPPING_TABLES'>true</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_CASE_INSENSITIVE_CONTAINS'>true</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_IGNORE_HINT_CHECK_NOT_NULL'>true</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_SORT_BY'>true</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_SUBQUERIES'>true</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_SUBQUERY_QUERY_CONTEXT'>true</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_SUPPORTS_LODJOINS'>true</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_SUPPORT_ANALYTIC_FUNCTIONS'>true</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_TOP_N'>true</attribute>
+              <attribute datatype='boolean' name='CAP_QUERY_USE_QUERY_FUSION'>true</attribute>
+              <attribute datatype='boolean' name='CAP_SUPPORTS_SPLIT_FROM_LEFT'>true</attribute>
+              <attribute datatype='boolean' name='CAP_SUPPORTS_SPLIT_FROM_RIGHT'>true</attribute>
+              <attribute datatype='integer' name='charset'>0</attribute>
+              <attribute datatype='string' name='collation'>&quot;binary&quot;</attribute>
+              <attribute datatype='string' name='datasource'>&quot;<![CDATA[<?xml version='1.0' encoding='utf-8' ?>
+
+<datasource :source-version='18.1' formatted-name='federated.1wfunof1tbqbew10ivenv1sfmpfo' inline='true' version='18.1' xml:base='https://kagebunshin.kepo.ninja' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+  </document-format-change-manifest>
+  <repository-location id='airport_mastergalaxy_dwh_16608142083690' path='/datasources' revision='1.0' />
+  <connection channel='https' class='sqlproxy' dbname='airport_mastergalaxy_dwh_16608142083690' directory='/dataserver' port='443' server='kagebunshin.kepo.ninja'>
+    <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='sqlproxy' table='[sqlproxy]' type='table' />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='sqlproxy' table='[sqlproxy]' type='table' />
+    <cols>
+      <map key='[airport_code]' value='[sqlproxy].[airport_code]' />
+      <map key='[airport_name]' value='[sqlproxy].[airport_name]' />
+      <map key='[business_id]' value='[sqlproxy].[business_id]' />
+      <map key='[city_name]' value='[sqlproxy].[city_name]' />
+      <map key='[country_id]' value='[sqlproxy].[country_id]' />
+      <map key='[country_name]' value='[sqlproxy].[country_name]' />
+      <map key='[location_name]' value='[sqlproxy].[location_name]' />
+      <map key='[processed_dttm]' value='[sqlproxy].[processed_dttm]' />
+    </cols>
+  </connection>
+  <aliases enabled='yes' />
+  <_.fcp.ObjectModelTableType.true...column aggregation='Count' caption='airport_master' datatype='table' default-type='quantitative' name='[__tableau_internal_object_id__].[airport_master_E36B58EBADE3429E93631F6D93BE9646]' pivot='key' role='measure' type='quantitative' user-datatype='table' visual-totals='Default' />
+  <column aggregation='Count' caption='Airport Code' datatype='string' default-type='nominal' name='[airport_code]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+  <column aggregation='Count' caption='Airport Name' datatype='string' default-type='nominal' name='[airport_name]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+  <column aggregation='Count' caption='Business Id' datatype='integer' default-type='ordinal' name='[business_id]' pivot='key' role='dimension' type='ordinal' user-datatype='integer' visual-totals='Default' />
+  <column aggregation='Count' caption='City Name' datatype='string' default-type='nominal' name='[city_name]' pivot='key' role='dimension' semantic-role='[City].[Name]' type='nominal' user-datatype='string' visual-totals='Default' />
+  <column aggregation='Count' caption='Country Id' datatype='string' default-type='nominal' name='[country_id]' pivot='key' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' user-datatype='string' visual-totals='Default' />
+  <column aggregation='Count' caption='Country Name' datatype='string' default-type='nominal' name='[country_name]' pivot='key' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' user-datatype='string' visual-totals='Default' />
+  <column aggregation='Count' caption='Location Name' datatype='string' default-type='nominal' name='[location_name]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+  <column aggregation='Year' caption='Processed Dttm' datatype='datetime' default-type='ordinal' name='[processed_dttm]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
+  <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+  <semantic-values>
+    <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+  </semantic-values>
+  <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    <objects>
+      <object caption='airport_master' id='airport_master_E36B58EBADE3429E93631F6D93BE9646'>
+        <properties context=''>
+          <relation name='sqlproxy' table='[sqlproxy]' type='table' />
+        </properties>
+      </object>
+    </objects>
+  </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+</datasource>
+]]>&quot;</attribute>
+              <attribute datatype='string' name='dialect-definition'>&quot;<![CDATA[<dialect-definition>
+  <primary-dialect class='hyper' version='0.0.0'>
+  </primary-dialect>
+</dialect-definition>
+]]>&quot;</attribute>
+              <attribute datatype='boolean' name='extract-active'>true</attribute>
+              <attribute datatype='boolean' name='fast-get-server-time'>true</attribute>
+              <attribute datatype='string' name='update-time'>&quot;8/18/2022 9:13:29 AM&quot;</attribute>
+            </attributes>
           </metadata-record>
         </metadata-records>
       </connection>
+      <overridable-settings>
+        <date-options fiscal-year-start='january' start-of-week='sunday' />
+        <default-date-format />
+        <default-calendar-type>Gregorian</default-calendar-type>
+      </overridable-settings>
       <aliases enabled='yes' />
-      <_.fcp.ObjectModelTableType.true...column caption='airport_master' datatype='table' name='[__tableau_internal_object_id__].[airport_master_E36B58EBADE3429E93631F6D93BE9646]' role='measure' type='quantitative' />
-      <column caption='Airport Code' datatype='string' name='[airport_code]' role='dimension' type='nominal' />
-      <column caption='Airport Name' datatype='string' name='[airport_name]' role='dimension' type='nominal' />
-      <column caption='Business Id' datatype='integer' name='[business_id]' role='dimension' type='ordinal' />
-      <column caption='City Name' datatype='string' name='[city_name]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
-      <column caption='Country Id' datatype='string' name='[country_id]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
-      <column caption='Country Name' datatype='string' name='[country_name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
-      <column caption='Location Name' datatype='string' name='[location_name]' role='dimension' type='nominal' />
-      <column caption='Processed Dttm' datatype='datetime' name='[processed_dttm]' role='dimension' type='ordinal' />
-      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
-        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='/Users/indradikhalidmaulana/Documents/airport_master (galaxy_dwh).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='08/18/2022 09:13:29 AM' username='tableau_internal_user'>
-          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
-          <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
-          <refresh>
-            <refresh-event add-from-file-path='airport_master (galaxy_dwh)' increment-value='%null%' refresh-type='create' rows-inserted='4193' timestamp-start='2022-08-18 09:13:27.340' />
-          </refresh>
-          <metadata-records>
-            <metadata-record class='column'>
-              <remote-name>business_id</remote-name>
-              <remote-type>20</remote-type>
-              <local-name>[business_id]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>business_id</remote-alias>
-              <ordinal>0</ordinal>
-              <family>airport_master</family>
-              <local-type>integer</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>4193</approx-count>
-              <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>airport_name</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[airport_name]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>airport_name</remote-alias>
-              <ordinal>1</ordinal>
-              <family>airport_master</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>4193</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LROOT' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>airport_code</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[airport_code]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>airport_code</remote-alias>
-              <ordinal>2</ordinal>
-              <family>airport_master</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>4067</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LROOT' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>location_name</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[location_name]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>location_name</remote-alias>
-              <ordinal>3</ordinal>
-              <family>airport_master</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>1275</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LROOT' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>country_id</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[country_id]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>country_id</remote-alias>
-              <ordinal>4</ordinal>
-              <family>airport_master</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>304</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LROOT' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>country_name</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[country_name]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>country_name</remote-alias>
-              <ordinal>5</ordinal>
-              <family>airport_master</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>186</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LROOT' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>city_name</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[city_name]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>city_name</remote-alias>
-              <ordinal>6</ordinal>
-              <family>airport_master</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>2801</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LROOT' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>processed_dttm</remote-name>
-              <remote-type>135</remote-type>
-              <local-name>[processed_dttm]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>processed_dttm</remote-alias>
-              <ordinal>7</ordinal>
-              <family>airport_master</family>
-              <local-type>datetime</local-type>
-              <aggregation>Year</aggregation>
-              <approx-count>1</approx-count>
-              <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airport_master_E36B58EBADE3429E93631F6D93BE9646]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-          </metadata-records>
-        </connection>
-      </extract>
+      <_.fcp.ObjectModelTableType.true...column aggregation='Count' caption='airport_master' datatype='table' default-type='quantitative' layered='true' name='[__tableau_internal_object_id__].[airport_master_E36B58EBADE3429E93631F6D93BE9646]' pivot='key' role='measure' type='quantitative' user-datatype='table' visual-totals='Default' />
+      <column aggregation='Count' caption='Airport Code' datatype='string' default-type='nominal' layered='true' name='[airport_code]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='Airport Name' datatype='string' default-type='nominal' layered='true' name='[airport_name]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='Business Id' datatype='integer' default-type='ordinal' layered='true' name='[business_id]' pivot='key' role='dimension' type='ordinal' user-datatype='integer' visual-totals='Default' />
+      <column aggregation='Count' caption='City Name' datatype='string' default-type='nominal' layered='true' name='[city_name]' pivot='key' role='dimension' semantic-role='[City].[Name]' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='Country Id' datatype='string' default-type='nominal' layered='true' name='[country_id]' pivot='key' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='Country Name' datatype='string' default-type='nominal' layered='true' name='[country_name]' pivot='key' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Count' caption='Location Name' datatype='string' default-type='nominal' layered='true' name='[location_name]' pivot='key' role='dimension' type='nominal' user-datatype='string' visual-totals='Default' />
+      <column aggregation='Year' caption='Processed Dttm' datatype='datetime' default-type='ordinal' layered='true' name='[processed_dttm]' pivot='key' role='dimension' type='ordinal' user-datatype='datetime' visual-totals='Default' />
       <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
@@ -269,10 +298,7 @@
         <objects>
           <object caption='airport_master' id='airport_master_E36B58EBADE3429E93631F6D93BE9646'>
             <properties context=''>
-              <relation connection='bigquery.1rij9ek0u9u3ae17hcy5z0jd33nf' name='airport_master' table='[prod-datarangers.galaxy_dwh].[airport_master]' type='table' />
-            </properties>
-            <properties context='extract'>
-              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+              <relation name='sqlproxy' table='[sqlproxy]' type='table' />
             </properties>
           </object>
         </objects>
@@ -284,12 +310,12 @@
       <table>
         <view>
           <datasources>
-            <datasource caption='airport_master (galaxy_dwh)' name='federated.1wfunof1tbqbew10ivenv1sfmpfo' />
+            <datasource caption='airport_master (galaxy_dwh)' name='sqlproxy.0nuugn41ygabdy1glbjj91l924ap' />
           </datasources>
-          <datasource-dependencies datasource='federated.1wfunof1tbqbew10ivenv1sfmpfo'>
-            <_.fcp.ObjectModelTableType.true...column caption='airport_master' datatype='table' name='[__tableau_internal_object_id__].[airport_master_E36B58EBADE3429E93631F6D93BE9646]' role='measure' type='quantitative' />
+          <datasource-dependencies datasource='sqlproxy.0nuugn41ygabdy1glbjj91l924ap'>
+            <_.fcp.ObjectModelTableType.true...column aggregation='Count' caption='airport_master' datatype='table' default-type='quantitative' layered='true' name='[__tableau_internal_object_id__].[airport_master_E36B58EBADE3429E93631F6D93BE9646]' pivot='key' role='measure' type='quantitative' user-datatype='table' visual-totals='Default' />
             <column-instance column='[__tableau_internal_object_id__].[airport_master_E36B58EBADE3429E93631F6D93BE9646]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:airport_master_E36B58EBADE3429E93631F6D93BE9646:qk]' pivot='key' type='quantitative' />
-            <_.fcp.ObjectModelTableType.false...column caption='airport_master' datatype='integer' name='[__tableau_internal_object_id__].[airport_master_E36B58EBADE3429E93631F6D93BE9646]' role='measure' type='quantitative' />
+            <_.fcp.ObjectModelTableType.false...column aggregation='Count' caption='airport_master' datatype='integer' default-type='quantitative' layered='true' name='[__tableau_internal_object_id__].[airport_master_E36B58EBADE3429E93631F6D93BE9646]' pivot='key' role='measure' type='quantitative' user-datatype='integer' visual-totals='Default' />
           </datasource-dependencies>
           <aggregation value='true' />
         </view>
@@ -302,8 +328,8 @@
             <mark class='Automatic' />
           </pane>
         </panes>
-        <rows>[federated.1wfunof1tbqbew10ivenv1sfmpfo].[__tableau_internal_object_id__].[cnt:airport_master_E36B58EBADE3429E93631F6D93BE9646:qk]</rows>
-        <cols>[federated.1wfunof1tbqbew10ivenv1sfmpfo].[Latitude (generated)]</cols>
+        <rows>[sqlproxy.0nuugn41ygabdy1glbjj91l924ap].[__tableau_internal_object_id__].[cnt:airport_master_E36B58EBADE3429E93631F6D93BE9646:qk]</rows>
+        <cols>[sqlproxy.0nuugn41ygabdy1glbjj91l924ap].[Latitude (generated)]</cols>
       </table>
       <simple-id uuid='{7E7D30EC-79AE-44C2-A387-B0CDB990A450}' />
     </worksheet>
@@ -311,14 +337,14 @@
       <table>
         <view>
           <datasources>
-            <datasource caption='airport_master (galaxy_dwh)' name='federated.1wfunof1tbqbew10ivenv1sfmpfo' />
+            <datasource caption='airport_master (galaxy_dwh)' name='sqlproxy.0nuugn41ygabdy1glbjj91l924ap' />
           </datasources>
-          <datasource-dependencies datasource='federated.1wfunof1tbqbew10ivenv1sfmpfo'>
-            <_.fcp.ObjectModelTableType.true...column caption='airport_master' datatype='table' name='[__tableau_internal_object_id__].[airport_master_E36B58EBADE3429E93631F6D93BE9646]' role='measure' type='quantitative' />
+          <datasource-dependencies datasource='sqlproxy.0nuugn41ygabdy1glbjj91l924ap'>
+            <_.fcp.ObjectModelTableType.true...column aggregation='Count' caption='airport_master' datatype='table' default-type='quantitative' layered='true' name='[__tableau_internal_object_id__].[airport_master_E36B58EBADE3429E93631F6D93BE9646]' pivot='key' role='measure' type='quantitative' user-datatype='table' visual-totals='Default' />
             <column-instance column='[__tableau_internal_object_id__].[airport_master_E36B58EBADE3429E93631F6D93BE9646]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:airport_master_E36B58EBADE3429E93631F6D93BE9646:qk]' pivot='key' type='quantitative' />
-            <column caption='Country Name' datatype='string' name='[country_name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column aggregation='Count' caption='Country Name' datatype='string' default-type='nominal' layered='true' name='[country_name]' pivot='key' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' user-datatype='string' visual-totals='Default' />
             <column-instance column='[country_name]' derivation='None' name='[none:country_name:nk]' pivot='key' type='nominal' />
-            <_.fcp.ObjectModelTableType.false...column caption='airport_master' datatype='integer' name='[__tableau_internal_object_id__].[airport_master_E36B58EBADE3429E93631F6D93BE9646]' role='measure' type='quantitative' />
+            <_.fcp.ObjectModelTableType.false...column aggregation='Count' caption='airport_master' datatype='integer' default-type='quantitative' layered='true' name='[__tableau_internal_object_id__].[airport_master_E36B58EBADE3429E93631F6D93BE9646]' pivot='key' role='measure' type='quantitative' user-datatype='integer' visual-totals='Default' />
           </datasource-dependencies>
           <aggregation value='true' />
         </view>
@@ -331,14 +357,38 @@
             <mark class='Automatic' />
           </pane>
         </panes>
-        <rows>[federated.1wfunof1tbqbew10ivenv1sfmpfo].[__tableau_internal_object_id__].[cnt:airport_master_E36B58EBADE3429E93631F6D93BE9646:qk]</rows>
-        <cols>[federated.1wfunof1tbqbew10ivenv1sfmpfo].[none:country_name:nk]</cols>
+        <rows>[sqlproxy.0nuugn41ygabdy1glbjj91l924ap].[__tableau_internal_object_id__].[cnt:airport_master_E36B58EBADE3429E93631F6D93BE9646:qk]</rows>
+        <cols>[sqlproxy.0nuugn41ygabdy1glbjj91l924ap].[none:country_name:nk]</cols>
       </table>
       <simple-id uuid='{7D990231-5DED-452E-AD9D-4F7BF3834038}' />
     </worksheet>
   </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones />
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='3' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{47FF6773-D8AC-488F-8B77-75FEF4021C21}' />
+    </dashboard>
+  </dashboards>
   <windows source-height='30'>
-    <window class='worksheet' name='Total Airport Master'>
+    <window class='worksheet' maximized='true' name='Total Airport Master'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -362,13 +412,13 @@
       <viewpoint>
         <highlight>
           <color-one-way>
-            <field>[federated.1wfunof1tbqbew10ivenv1sfmpfo].[none:country_name:nk]</field>
+            <field>[sqlproxy.0nuugn41ygabdy1glbjj91l924ap].[none:country_name:nk]</field>
           </color-one-way>
         </highlight>
       </viewpoint>
       <simple-id uuid='{85EF9200-D3FA-4C8B-B657-82EFF89C8E30}' />
     </window>
-    <window class='worksheet' maximized='true' name='Sheet 2'>
+    <window class='worksheet' name='Sheet 2'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -391,8 +441,42 @@
       </cards>
       <simple-id uuid='{4E595332-291C-447C-B5CB-4C1F26E655D2}' />
     </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{AA084718-D883-4F42-A25F-B42ABF110BBE}' />
+    </window>
   </windows>
   <thumbnails>
+    <thumbnail height='384' name='Dashboard 1' width='384'>
+      iVBORw0KGgoAAAANSUhEUgAAAYAAAAGACAYAAACkx7W/AAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAFXUlEQVR4nO3VMQEAIAzAMMC/5yFjRxMF/XpnZg4AOW87AIAdBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABR
+      BgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUA
+      AFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQ
+      ZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABR
+      BgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUA
+      AFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQ
+      ZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABR
+      BgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUA
+      AFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQ
+      ZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEfFxoG/IiMv0YAAAAASUVORK5CYII=
+    </thumbnail>
     <thumbnail height='384' name='Sheet 2' width='384'>
       iVBORw0KGgoAAAANSUhEUgAAAYAAAAGACAYAAACkx7W/AAAACXBIWXMAAA7DAAAOwwHHb6hk
       AAAgAElEQVR4nO3de3hUdXoH8O85Z86cuSRzy5UgBAMY7loRAcUVtUvxUqvrVgWqbvfqrq66
