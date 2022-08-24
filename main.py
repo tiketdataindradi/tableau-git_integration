@@ -162,7 +162,7 @@ def main(args):
 
         comment_pr(args.repo_token, "\n".join(list_message))
         if status is False:
-            raise TableauWorkbookError("\n".join(list_message))
+            #raise TableauWorkbookError("\n".join(list_message))
             return False
     else:
         logging.info("No file changes detected")
