@@ -12,6 +12,7 @@ exit_status=$?
 if [ "${exit_status}" -ne 0 ];
 then
     echo "exit ${exit_status}"
+    exit 1
 fi
-echo "EXIT 0"
-# exit 0
+# echo "EXIT 0"
+exit 0
