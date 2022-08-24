@@ -155,13 +155,15 @@ def main(args):
                     list_message.append(f"Workbook : { workbook_schema['name'] } not published to Tableau   :x:")
                     status = False
             else:
-                logging.info(f"Skip publishing workbook { file } not listed in config files")
-                list_message.append(f"Skip publishing workbook { file.split('.')[0]}, because not listed in config files  :x:")
+                logging.info(f"Skip publishing workbook: { file } not listed in config files")
+                list_message.append(f"Skip publishing workbook: { file.split('.')[0]}, because not listed in config files  :x:")
                 list_message.append("Make sure workbook name in config file (workbooks.yml) is correct and uploaded file is in .twbx format")
+                status = False
 
         comment_pr(args.repo_token, "\n".join(list_message))
         if status is False:
             raise TableauWorkbookError("\n".join(list_message))
+            return False
     else:
         logging.info("No file changes detected")
     return True
@@ -174,4 +176,6 @@ if __name__=='__main__':
     parser.add_argument('--repo_token', action = 'store', type=str, required = True)
 
     args = parser.parse_args()
-    main(args)
+    #main(args)
+    result = main(args)
+    print(result)
