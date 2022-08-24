@@ -11,6 +11,7 @@ import logging
 import argparse
 from pathlib import Path
 from github import Github
+import sys
 
 from tableau_api import TableauApi
 
@@ -163,10 +164,11 @@ def main(args):
         comment_pr(args.repo_token, "\n".join(list_message))
         if status is False:
             #raise TableauWorkbookError("\n".join(list_message))
-            return False
+            sys.exit(1)
+
     else:
         logging.info("No file changes detected")
-    return True
+    sys.exit(0)
 
 
 if __name__=='__main__':
@@ -176,6 +178,6 @@ if __name__=='__main__':
     parser.add_argument('--repo_token', action = 'store', type=str, required = True)
 
     args = parser.parse_args()
-    #main(args)
-    result = main(args)
-    print(result)
+    main(args)
+    # result = main(args)
+    # print(result)

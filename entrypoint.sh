@@ -8,4 +8,10 @@ cp -r /action/* /github/workspace/
 
 python main.py --workbook_dir=$1 --env=$2 --repo_token=$3
 
-exit 0
+exit_status=$?
+if [ "${exit_status}" -ne 0 ];
+then
+    echo "exit ${exit_status}"
+fi
+echo "EXIT 0"
+# exit 0
