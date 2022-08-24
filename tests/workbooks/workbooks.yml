@@ -51,7 +51,7 @@ workbooks:
         - Omset Event Details
         show_tabs: true
     - name: wb publihsed
-      file_path: wb_published_data.twb
+      file_path: wb_published.twb
       project_path: tableau_git/contoh_2 
       option:
         tags:
