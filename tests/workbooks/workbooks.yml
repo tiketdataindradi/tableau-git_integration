@@ -50,13 +50,12 @@ workbooks:
         hidden_views:
         - Omset Event Details
         show_tabs: true
-    - name: wb embedded
-      file_path: wb_embedded_data.twbx
+    - name: wb publihsed
+      file_path: wb_published_data.twb
       project_path: tableau_git/contoh_2 
       option:
         tags:
           - test twb
-          - finance
           - test
         hidden_views:
       
