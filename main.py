@@ -100,7 +100,7 @@ def submit_workbook(workbook_schema, file_path, env):
         description = workbook_schema['option']['description'] if 'description' in workbook_schema['option'] else None
 
     if env != 'production':
-        new_workbook = tableau_api.publish_workbook(name =  'TESTING - ' + workbook_schema['name'],
+        new_workbook = tableau_api.publish_workbook(name =  '[Testing] ' + workbook_schema['name'],
                                                     project_id = project_id,
                                                     file_path = file_path,
                                                     hidden_views = hidden_views,
@@ -130,6 +130,7 @@ def main(args):
     logging.info(addmodified_files)
     addmodified_files = [file.split(args.workbook_dir+'/')[1] for file in addmodified_files if args.workbook_dir in file and ".twb" in file]
 
+    list_message = list()
     if len(addmodified_files) > 0:
         logging.info("Add & Modified Files:")
         logging.info(addmodified_files)
@@ -137,7 +138,7 @@ def main(args):
         status = True
         list_message = list()
         for file in addmodified_files:
-            if file in full_schema_config['workbooks'].keys():
+            if file in full_schema_config['workbooks'].keys() and ".twbx" in file:
                 workbook_schema = full_schema_config['workbooks'][file]
                 try:
                     logging.info(f"Publishing workbook : { workbook_schema['project_path'] + '/' + workbook_schema['name'] } to Tableau")
@@ -146,18 +147,18 @@ def main(args):
                                                                  args.env)
                     if args.env != 'production':
                         logging.info(f"Workbook : { workbook_schema['name']} Published to Tableau folder Staging")
-                        list_message.append(f"Workbook : {workbook_schema['name']} published to Tableau folder Staging :heavy_check_mark:")
+                        list_message.append(f"\nWorkbook : {workbook_schema['name']} published to Tableau folder sandbox:heavy_check_mark:")
                     else: 
                         logging.info(f"Workbook : { workbook_schema['name']} Published to Tableau Server")
-                        list_message.append(f"Workbook : {workbook_schema['name']} published to Tableau Server  :heavy_check_mark:")
+                        list_message.append(f"\nWorkbook : {workbook_schema['name']} published to Tableau Server  :heavy_check_mark:")
                 except Exception as e:
                     logging.info(f"Error publishing workbook { workbook_schema['name'] }")
                     logging.error(e)
-                    list_message.append(f"Workbook : { workbook_schema['name'] } not published to Tableau   :x:")
+                    list_message.append(f"\nWorkbook : { workbook_schema['name'] } not published to Tableau   :x:")
                     status = False
             else:
                 logging.info(f"Skip publishing workbook: { file } not listed in config files")
-                list_message.append(f"Skip publishing workbook: { file.split('.')[0]}, because not listed in config files  :x:")
+                list_message.append(f"\nSkip publishing workbook: { file.split('.')[0]}, because not listed in config files or files in .twb format :x:")
                 list_message.append("Make sure workbook name in config file (workbooks.yml) is correct and uploaded file is in .twbx format")
                 status = False
 
@@ -168,6 +169,10 @@ def main(args):
 
     else:
         logging.info("No file changes detected")
+        list_message.append("No file changes detected")
+        list_message.append("Make sure to upload your updated file, workbook name in config file (workbooks.yml) is correct and uploaded file is in .twbx format")
+        comment_pr(args.repo_token, "\n".join(list_message))
+        sys.exit(1)
     sys.exit(0)
 
 
