@@ -40,7 +40,7 @@ workbooks:
         show_tabs: true
         
     - name: Finance Omset Event
-      file_path: Finance Admin Events.twbx
+      file_path: Finance Admin Event.twbx
       project_path: tableau_git/contoh_2 
       option:
         tags:
