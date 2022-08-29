@@ -158,7 +158,7 @@ def main(args):
                     status = False
             else:
                 logging.info(f"Skip publishing workbook: { file } not listed in config files")
-                list_message.append(f"Skip publishing workbook: { file.split('.')[0]}, because not listed in config files or files in .twb format :x:")
+                list_message.append(f"\nSkip publishing workbook: { file.split('.')[0]}, because not listed in config files or files in .twb format :x:")
                 list_message.append("Make sure workbook name in config file (workbooks.yml) is correct and uploaded file is in .twbx format")
                 status = False
 
