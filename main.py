@@ -171,6 +171,7 @@ def main(args):
         logging.info("No file changes detected")
         list_message.append("No file changes detected")
         list_message.append("Make sure workbook name in config file (workbooks.yml) is correct and uploaded file is in .twbx format")
+        comment_pr(args.repo_token, "\n".join(list_message))
         sys.exit(1)
     sys.exit(0)
 
