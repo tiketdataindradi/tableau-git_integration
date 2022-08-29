@@ -128,7 +128,7 @@ def main(args):
 
     addmodified_files = get_addmodified_files(args.repo_token)
     logging.info(addmodified_files)
-    addmodified_files = [file.split(args.workbook_dir+'/')[1] for file in addmodified_files if args.workbook_dir in file and ".twb" in file]
+    addmodified_files = [file.split(args.workbook_dir+'/')[1] for file in addmodified_files if args.workbook_dir in file and ".twbx" in file]
 
     if len(addmodified_files) > 0:
         logging.info("Add & Modified Files:")
@@ -168,6 +168,9 @@ def main(args):
 
     else:
         logging.info("No file changes detected")
+        list_message.append("No file changes detected")
+        list_message.append("Make sure workbook name in config file (workbooks.yml) is correct and uploaded file is in .twbx format")
+        sys.exit(1)
     sys.exit(0)
 
 
