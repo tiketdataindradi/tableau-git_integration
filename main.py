@@ -131,7 +131,7 @@ def main(args):
     addmodified_files = [file.split(args.workbook_dir+'/')[1] for file in addmodified_files if args.workbook_dir in file and ".twb" in file]
 
     list_message = list()
-    if len(addmodified_files) > 0 and ".twbx" in file:
+    if len(addmodified_files) > 0 and ".twbx" in addmodified_files:
         logging.info("Add & Modified Files:")
         logging.info(addmodified_files)
 
