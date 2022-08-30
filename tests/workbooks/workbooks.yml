@@ -60,7 +60,17 @@ workbooks:
         hidden_views:
       
         show_tabs: true
-        
+    - name: channel payment (in folder)
+      file_path: payment/Channel payments.twbx
+      project_path: tableau_git/contoh_3
+      option:
+        tags:
+          - test twbx in folder
+          - test
+        hidden_views:
+      
+        show_tabs: true
+  
     
         
     
