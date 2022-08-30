@@ -71,7 +71,7 @@ workbooks:
       
         show_tabs: true
     - name: twb workbook
-      file_path: wb_embedded_data.twb
+      file_path: wb_embedded_data.twbx
       project_path: tableau_git/contoh_3
       option:
         tags:
