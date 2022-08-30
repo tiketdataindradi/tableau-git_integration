@@ -61,7 +61,7 @@ workbooks:
       
         show_tabs: true
     - name: channel payment (in folder)
-      file_path: payment/Channel payments.twbx
+      file_path: payment/Channel payment.twbx
       project_path: tableau_git/contoh_3
       option:
         tags:
