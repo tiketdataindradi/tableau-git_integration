@@ -70,6 +70,16 @@ workbooks:
         hidden_views:
       
         show_tabs: true
+    - name: twb workbook
+      file_path: wb_embedded_data.twb
+      project_path: tableau_git/contoh_3
+      option:
+        tags:
+          - test twb in folder
+          - test
+        hidden_views:
+      
+        show_tabs: true
   
     
         
