@@ -80,6 +80,17 @@ workbooks:
         hidden_views:
       
         show_tabs: true
+    - name: Finance Admin Dashboard
+      file_path: Finance Admin - Omset Event.twbx
+      project_path: tableau_git/contoh_4
+      option:
+        tags:
+          - Indradi Khalid
+          - test twb in folder
+          - test
+        hidden_views:
+        
+        show_tabs: true
   
     
         
