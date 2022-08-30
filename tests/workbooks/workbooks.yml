@@ -70,16 +70,6 @@ workbooks:
         hidden_views:
       
         show_tabs: true
-    - name: twb workbook
-      file_path: wb_embedded_datas.twbx
-      project_path: tableau_git/contoh_3
-      option:
-        tags:
-          - test twb in folder
-          - test
-        hidden_views:
-      
-        show_tabs: true
     - name: Finance Admin Dashboard
       file_path: Finance Admin - Omset Event.twbx
       project_path: tableau_git/contoh_4
@@ -89,7 +79,7 @@ workbooks:
           - test twb in folder
           - test
         hidden_views:
-        
+
         show_tabs: true
   
     
