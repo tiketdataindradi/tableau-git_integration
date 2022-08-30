@@ -61,7 +61,7 @@ workbooks:
       
         show_tabs: true
     - name: channel payment (in folder)
-      file_path: payment/Channel payment.twbx
+      file_path: payment/Channel payments.twbx
       project_path: tableau_git/contoh_3
       option:
         tags:
@@ -69,6 +69,17 @@ workbooks:
           - test
         hidden_views:
       
+        show_tabs: true
+    - name: Finance Admin Dashboard
+      file_path: Finance Admin - Omset Event.twbx
+      project_path: tableau_git/contoh_4
+      option:
+        tags:
+          - Indradi Khalid
+          - test twb in folder
+          - test
+        hidden_views:
+
         show_tabs: true
   
     
