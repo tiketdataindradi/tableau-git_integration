@@ -84,7 +84,7 @@ workbooks:
     - name: test wb
       file_path: wb_embedded_data.twbx
       project_path: tableau_git/contoh_2 
-      partner_server: true
+      partner_server: True
       option:
         tags:
           - test twb
