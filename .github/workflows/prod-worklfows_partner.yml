@@ -18,10 +18,10 @@ jobs:
       - name: 'Tableau Workbook Deployments Action'
         uses: ./
         env:
-          USERNAME:  ${{ secrets.USERNAME_PARTNER}}
-          PASSWORD: ${{ secrets.PASSWORD_PARTNER }}
-          SITE_ID: ${{ secrets.SITE_ID_PARTNER }}
-          TABLEAU_URL: ${{ secrets.TABLEAU_URL_PARTNER}}
+          USERNAME_PARTNER:  ${{ secrets.USERNAME_PARTNER}}
+          PASSWORD_PARTNER: ${{ secrets.PASSWORD_PARTNER }}
+          SITE_ID_PARTNER: ${{ secrets.SITE_ID_PARTNER }}
+          TABLEAU_URL_PARTNER: ${{ secrets.TABLEAU_URL_PARTNER}}
         with:
           workbook_dir: tests/workbooks
           env: production
