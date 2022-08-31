@@ -1,4 +1,4 @@
-name: Tableau Workbook Workflows Staging
+name: Tableau Workbook Workflows Staging - Server Partner
 on:
   pull_request:
       branches:
