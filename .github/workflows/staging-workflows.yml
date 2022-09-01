@@ -3,6 +3,8 @@ on:
   pull_request:
       branches:
         - master
+      paths:
+        - 'tests/workbooks/Kagebunshin/**'
 jobs:
   tableau-validation-action:
     name: Tableau Workbook Staging Publisher
@@ -17,22 +19,7 @@ jobs:
           SITE_ID: ${{ secrets.SITE_ID }}
           TABLEAU_URL: ${{ secrets.TABLEAU_URL }}
         with:
-          workbook_dir: tests/workbooks
+          workbook_dir: tests/workbooks/Kagebunshin
           env: staging
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-  tableau-validation-action-server_partner:
-    name: Tableau Workbook Staging Publisher to Server Partner
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: 'Tableau Workbook Action' #This workflows expected to be error since no secrets vars provided
-        uses: ./
-        env:
-          USERNAME_PARTNER: ${{ secrets.USERNAME_PARTNER }}
-          PASSWORD_PARTNER: ${{ secrets.PASSWORD_PARTNER }}
-          SITE_ID_PARTNER: ${{ secrets.SITE_ID_PARTNER }}
-          TABLEAU_URL_PARTNER: ${{ secrets.TABLEAU_URL_PARTNER }}
-        with:
-          workbook_dir: tests/workbooks
-          env: staging
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+  

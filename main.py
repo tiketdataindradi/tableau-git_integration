@@ -192,8 +192,8 @@ def main(args):
                 try:
                     logging.info(f"Publishing workbook : { workbook_schema['project_path'] + '/' + workbook_schema['name'] } to Tableau")
                     project_path, new_workbook = submit_workbook(workbook_schema,
-                                                                 args.workbook_dir + "/" + file,
-                                                                 args.env)
+                                                                args.workbook_dir + "/" + file,
+                                                                args.env)
                     if args.env != 'production':
                         logging.info(f"Workbook : { workbook_schema['name']} Published to Tableau folder sandbox")
                         list_message.append(f"\nWorkbook : {workbook_schema['name']} published to Tableau folder sandbox:heavy_check_mark:")
@@ -205,6 +205,7 @@ def main(args):
                     logging.error(e)
                     list_message.append(f"\nWorkbook : { workbook_schema['name'] } not published to Tableau   :x:")
                     status = False
+              
             else:
                 logging.info(f"Skip publishing workbook: { file } not listed in config files")
                 list_message.append(f"\nSkip publishing workbook: { file.split('.')[0]} :x:")

@@ -3,6 +3,8 @@ on:
   pull_request:
       branches:
         - master
+      paths:
+        - 'tests/workbooks/Partner/**'
 jobs:
   tableau-validation-action:
     name: Tableau Workbook Staging Publisher to Server Partner
@@ -17,6 +19,6 @@ jobs:
           SITE_ID_PARTNER: ${{ secrets.SITE_ID_PARTNER }}
           TABLEAU_URL_PARTNER: ${{ secrets.TABLEAU_URL_PARTNER }}
         with:
-          workbook_dir: tests/workbooks
+          workbook_dir: tests/workbooks/Partner
           env: staging
           repo_token: ${{ secrets.GITHUB_TOKEN }}
