@@ -81,6 +81,17 @@ workbooks:
         hidden_views:
 
         show_tabs: true
+    - name: Admin Dashboard
+      file_path: wb_embedded-data.twb
+      project_path: tableau_git/contoh_4
+      option:
+        tags:
+          - indradi.maulana@tiket.com
+          - test twb in folder
+          - test
+        hidden_views:
+
+        show_tabs: true
     
     
   
