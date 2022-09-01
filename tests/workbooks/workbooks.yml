@@ -81,17 +81,18 @@ workbooks:
         hidden_views:
 
         show_tabs: true
-    - name: dashboard 1
+     - name: test dashboard
       file_path: wb_embedded_data.twbx
-      project_path: tableau_git/contoh_5
+      project_path: tableau_git/contoh_4
       option:
         tags:
-          - Indradi Khalid Maulana
+          - Indradi Khalid
           - test twb in folder
           - test
         hidden_views:
 
         show_tabs: true
+    
   
     
         
