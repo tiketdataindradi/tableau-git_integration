@@ -82,7 +82,7 @@ workbooks:
 
         show_tabs: true
      - name: test dashboard
-      file_path: wb_embedded_data.twbx
+      file_path: wb_embedded_data.twb
       project_path: tableau_git/contoh_4
       option:
         tags:
