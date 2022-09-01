@@ -73,6 +73,7 @@ workbooks:
     - name: Finance Admin Dashboard
       file_path: Kagebunshin/Finance Admin - Omset Events.twbx
       project_path: tableau_git/contoh_4
+      partner_server: False
       option:
         tags:
           - Indradi Khalid
