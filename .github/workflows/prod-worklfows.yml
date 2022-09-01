@@ -5,7 +5,7 @@ on:
         - master
       types: [closed]
       paths:
-        - 'tests/workbooks/**'
+        - 'tests/workbooks/Kagebunshin/**'
 jobs:
   tableau-production-deployments:
     name: Tableau Workbook Production Deployments

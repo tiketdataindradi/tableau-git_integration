@@ -1,0 +1,28 @@
+name: Tableau Workbook Production Workflows - Server Partner
+on:
+  pull_request:
+      branches:
+        - master
+      types: [closed]
+      paths:
+        - 'tests/workbooks/Partner/**'
+jobs:
+  tableau-production-deployments:
+    name: Tableau Workbook Production Deployments to Partner Server
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: 'Tableau Workbook Deployments Action'
+        uses: ./
+        env:
+          USERNAME_PARTNER:  ${{ secrets.USERNAME_PARTNER}}
+          PASSWORD_PARTNER: ${{ secrets.PASSWORD_PARTNER }}
+          SITE_ID_PARTNER: ${{ secrets.SITE_ID_PARTNER }}
+          TABLEAU_URL_PARTNER: ${{ secrets.TABLEAU_URL_PARTNER}}
+        with:
+          workbook_dir: tests/workbooks
+          env: production
+          repo_token: ${{ secrets.GITHUB_TOKEN }}

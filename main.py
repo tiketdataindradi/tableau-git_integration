@@ -71,52 +71,101 @@ def get_addmodified_files(repo_token):
 
 
 def submit_workbook(workbook_schema, file_path, env):
-    if env != 'production':
-        project_path = 'Data Rangers/Sandbox/' + workbook_schema['project_path']
-    
+    partner_server = workbook_schema['partner_server'] if 'partner_server' in workbook_schema else False
+
+    if partner_server == True: 
+        if env != 'production':
+            project_path = 'Data - Sandbox/' + workbook_schema['project_path']
+        
+        else: 
+            project_path = workbook_schema['project_path']
+
+        tableau_api = TableauApi(os.environ['USERNAME_PARTNER'],
+                                os.environ['PASSWORD_PARTNER'],
+                                os.environ['TABLEAU_URL_PARTNER'] + '/api/',
+                                os.environ['TABLEAU_URL_PARTNER'],
+                                os.environ['SITE_ID_PARTNER'])
+        project_id = tableau_api.get_project_id_by_path_with_tree(project_path)
+
+        if project_id is None:
+            logging.info("Existing project on a given path doesn't exist, creating new project")
+            project_id = tableau_api.create_project_by_path(project_path)
+
+        hidden_views = None
+        show_tabs = False
+        tags = None
+        description = None
+
+        if 'option' in workbook_schema:
+            hidden_views = workbook_schema['option']['hidden_views'] if 'hidden_views' in workbook_schema['option'] else None
+            show_tabs = workbook_schema['option']['show_tabs'] if 'show_tabs' in workbook_schema['option'] else False
+            tags = workbook_schema['option']['tags'] if 'tags' in workbook_schema['option'] else None
+            description = workbook_schema['option']['description'] if 'description' in workbook_schema['option'] else None
+
+        if env != 'production':
+            new_workbook = tableau_api.publish_workbook(name =  '[Testing] ' + workbook_schema['name'],
+                                                        project_id = project_id,
+                                                        file_path = file_path,
+                                                        hidden_views = hidden_views,
+                                                        show_tabs = show_tabs,
+                                                        tags = tags,
+                                                        description = description)
+        
+        else: 
+            new_workbook = tableau_api.publish_workbook(name =  workbook_schema['name'],
+                                                        project_id = project_id,
+                                                        file_path = file_path,
+                                                        hidden_views = hidden_views,
+                                                        show_tabs = show_tabs,
+                                                        tags = tags,
+                                                        description = description)
+
     else: 
-        project_path = workbook_schema['project_path']
+        if env != 'production':
+            project_path = 'Data Rangers/Sandbox/' + workbook_schema['project_path']
+        
+        else: 
+            project_path = workbook_schema['project_path']
 
-    tableau_api = TableauApi(os.environ['USERNAME'],
-                            os.environ['PASSWORD'],
-                            os.environ['TABLEAU_URL'] + '/api/',
-                            os.environ['TABLEAU_URL'],
-                            os.environ['SITE_ID'])
-    project_id = tableau_api.get_project_id_by_path_with_tree(project_path)
+        tableau_api = TableauApi(os.environ['USERNAME'],
+                                os.environ['PASSWORD'],
+                                os.environ['TABLEAU_URL'] + '/api/',
+                                os.environ['TABLEAU_URL'],
+                                os.environ['SITE_ID'])
+        project_id = tableau_api.get_project_id_by_path_with_tree(project_path)
 
-    if project_id is None:
-        logging.info("Existing project on a given path doesn't exist, creating new project")
-        project_id = tableau_api.create_project_by_path(project_path)
+        if project_id is None:
+            logging.info("Existing project on a given path doesn't exist, creating new project")
+            project_id = tableau_api.create_project_by_path(project_path)
 
-    hidden_views = None
-    show_tabs = False
-    tags = None
-    description = None
+        hidden_views = None
+        show_tabs = False
+        tags = None
+        description = None
 
-    if 'option' in workbook_schema:
-        hidden_views = workbook_schema['option']['hidden_views'] if 'hidden_views' in workbook_schema['option'] else None
-        show_tabs = workbook_schema['option']['show_tabs'] if 'show_tabs' in workbook_schema['option'] else False
-        tags = workbook_schema['option']['tags'] if 'tags' in workbook_schema['option'] else None
-        description = workbook_schema['option']['description'] if 'description' in workbook_schema['option'] else None
+        if 'option' in workbook_schema:
+            hidden_views = workbook_schema['option']['hidden_views'] if 'hidden_views' in workbook_schema['option'] else None
+            show_tabs = workbook_schema['option']['show_tabs'] if 'show_tabs' in workbook_schema['option'] else False
+            tags = workbook_schema['option']['tags'] if 'tags' in workbook_schema['option'] else None
+            description = workbook_schema['option']['description'] if 'description' in workbook_schema['option'] else None
 
-    if env != 'production':
-        new_workbook = tableau_api.publish_workbook(name =  '[Testing] ' + workbook_schema['name'],
-                                                    project_id = project_id,
-                                                    file_path = file_path,
-                                                    hidden_views = hidden_views,
-                                                    show_tabs = show_tabs,
-                                                    tags = tags,
-                                                    description = description)
-    
-    else: 
-        new_workbook = tableau_api.publish_workbook(name =  workbook_schema['name'],
-                                                    project_id = project_id,
-                                                    file_path = file_path,
-                                                    hidden_views = hidden_views,
-                                                    show_tabs = show_tabs,
-                                                    tags = tags,
-                                                    description = description)
-
+        if env != 'production':
+            new_workbook = tableau_api.publish_workbook(name =  '[Testing] ' + workbook_schema['name'],
+                                                        project_id = project_id,
+                                                        file_path = file_path,
+                                                        hidden_views = hidden_views,
+                                                        show_tabs = show_tabs,
+                                                        tags = tags,
+                                                        description = description)
+        
+        else: 
+            new_workbook = tableau_api.publish_workbook(name =  workbook_schema['name'],
+                                                        project_id = project_id,
+                                                        file_path = file_path,
+                                                        hidden_views = hidden_views,
+                                                        show_tabs = show_tabs,
+                                                        tags = tags,
+                                                        description = description)
     return project_path, new_workbook
 
 
@@ -143,8 +192,8 @@ def main(args):
                 try:
                     logging.info(f"Publishing workbook : { workbook_schema['project_path'] + '/' + workbook_schema['name'] } to Tableau")
                     project_path, new_workbook = submit_workbook(workbook_schema,
-                                                                 args.workbook_dir + "/" + file,
-                                                                 args.env)
+                                                                args.workbook_dir + "/" + file,
+                                                                args.env)
                     if args.env != 'production':
                         logging.info(f"Workbook : { workbook_schema['name']} Published to Tableau folder sandbox")
                         list_message.append(f"\nWorkbook : {workbook_schema['name']} published to Tableau folder sandbox:heavy_check_mark:")
@@ -156,6 +205,7 @@ def main(args):
                     logging.error(e)
                     list_message.append(f"\nWorkbook : { workbook_schema['name'] } not published to Tableau   :x:")
                     status = False
+              
             else:
                 logging.info(f"Skip publishing workbook: { file } not listed in config files")
                 list_message.append(f"\nSkip publishing workbook: { file.split('.')[0]} :x:")
