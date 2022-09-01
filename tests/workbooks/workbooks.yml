@@ -71,7 +71,7 @@ workbooks:
       
         show_tabs: true
     - name: Finance Admin Dashboard
-      file_path: Finance Admin - Omset Event.twbx
+      file_path: Finance Admin - Omset Events.twbx
       project_path: tableau_git/contoh_4
       option:
         tags:
@@ -81,17 +81,7 @@ workbooks:
         hidden_views:
 
         show_tabs: true
-     - name: test dashboard
-      file_path: wb_embedded_data.twb
-      project_path: tableau_git/contoh_4
-      option:
-        tags:
-          - Indradi Khalid
-          - test twb in folder
-          - test
-        hidden_views:
-
-        show_tabs: true
+    
     
   
     
