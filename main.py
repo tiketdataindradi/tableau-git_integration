@@ -195,7 +195,7 @@ def main(args):
                                                                  args.workbook_dir + "/" + file,
                                                                  args.env)
                     if args.env != 'production':
-                        logging.info(f"Workbook : { workbook_schema['name']} Published to Tableau folder Staging")
+                        logging.info(f"Workbook : { workbook_schema['name']} Published to Tableau folder sandbox")
                         list_message.append(f"\nWorkbook : {workbook_schema['name']} published to Tableau folder sandbox:heavy_check_mark:")
                     else: 
                         logging.info(f"Workbook : { workbook_schema['name']} Published to Tableau Server")
@@ -207,8 +207,10 @@ def main(args):
                     status = False
             else:
                 logging.info(f"Skip publishing workbook: { file } not listed in config files")
-                list_message.append(f"\nSkip publishing workbook: { file.split('.')[0]}, because not listed in config files or files in .twb format :x:")
-                list_message.append("Make sure workbook name in config file (workbooks.yml) is correct and uploaded file is in .twbx format")
+                list_message.append(f"\nSkip publishing workbook: { file.split('.')[0]} :x:")
+                list_message.append("Please make sure: ")
+                list_message.append("1. Workbook name in config file (workbooks.yml) is correct")
+                list_message.append("2. Uploaded file is in .twbx format")
                 status = False
 
         comment_pr(args.repo_token, "\n".join(list_message))
@@ -219,7 +221,10 @@ def main(args):
     else:
         logging.info("No file changes detected")
         list_message.append("No file changes detected")
-        list_message.append("Make sure to upload your updated file, workbook name in config file (workbooks.yml) is correct and uploaded file is in .twbx format")
+        list_message.append("Please make sure: ")
+        list_message.append("1. Upload your workbook file to repository ")
+        list_message.append("2. Workbook name in config file (workbooks.yml) is correct")
+        list_message.append("3. Uploaded file is in .twbx format")
         comment_pr(args.repo_token, "\n".join(list_message))
         sys.exit(1)
     sys.exit(0)
