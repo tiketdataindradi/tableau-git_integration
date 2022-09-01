@@ -19,6 +19,6 @@ jobs:
           SITE_ID_PARTNER: ${{ secrets.SITE_ID_PARTNER }}
           TABLEAU_URL_PARTNER: ${{ secrets.TABLEAU_URL_PARTNER }}
         with:
-          workbook_dir: tests/workbooks/Partner
+          workbook_dir: tests/workbooks
           env: staging
           repo_token: ${{ secrets.GITHUB_TOKEN }}

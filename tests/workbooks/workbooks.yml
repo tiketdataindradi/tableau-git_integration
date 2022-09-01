@@ -82,7 +82,7 @@ workbooks:
 
         show_tabs: true
     - name: test wb
-      file_path: wb_embedded_data.twbx
+      file_path: Partner/wb_embedded_data.twbx
       project_path: tableau_git/contoh_2 
       partner_server: True
       option:
