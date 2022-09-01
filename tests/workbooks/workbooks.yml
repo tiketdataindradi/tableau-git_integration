@@ -70,18 +70,6 @@ workbooks:
         hidden_views:
       
         show_tabs: true
-    - name: Finance Admin Dashboard
-      file_path: Kagebunshin/Finance Admin - Omset Events.twbx
-      project_path: tableau_git/contoh_4
-      partner_server: False
-      option:
-        tags:
-          - Indradi Khalid
-          - test twb in folder
-          - test
-        hidden_views:
-
-        show_tabs: true
     - name: test wb
       file_path: Partner/wb_embedded_data.twbx
       project_path: tableau_git/contoh_2 
