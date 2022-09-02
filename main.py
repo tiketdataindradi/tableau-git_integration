@@ -197,9 +197,11 @@ def main(args):
                     if args.env != 'production':
                         logging.info(f"Workbook : { workbook_schema['name']} Published to Tableau folder sandbox")
                         list_message.append(f"\nWorkbook : {workbook_schema['name']} published to Tableau folder sandbox:heavy_check_mark:")
+                        list_message.append(f"Please check your workbook in folder: {project_path}")
                     else: 
                         logging.info(f"Workbook : { workbook_schema['name']} Published to Tableau Server")
                         list_message.append(f"\nWorkbook : {workbook_schema['name']} published to Tableau Server  :heavy_check_mark:")
+                        list_message.append(f"Please check your workbook in folder: {project_path}")
                 except Exception as e:
                     logging.info(f"Error publishing workbook { workbook_schema['name'] }")
                     logging.error(e)
