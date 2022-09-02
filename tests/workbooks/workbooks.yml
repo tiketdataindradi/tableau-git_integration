@@ -40,11 +40,11 @@ workbooks:
         show_tabs: true
         
     - name: Finance Omset Event
-      file_path: Finance Admin Events.twbx
-      project_path: tableau_git/contoh_2 
+      file_path: Kagebunshin/Finance Admin Events.twbx
+      project_path: tableau_git/contoh_4 
       option:
         tags:
-          - Adi
+          - indradi.maulana
           - finance
           - test
         hidden_views:
