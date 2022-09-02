@@ -40,7 +40,7 @@ workbooks:
         show_tabs: true
         
     - name: Finance Omset Event
-      file_path: Kagebunshin/Finance Admin Events.twbx
+      file_path: Finance Admin Event.twbx
       project_path: tableau_git/contoh_4 
       option:
         tags:
@@ -83,7 +83,7 @@ workbooks:
       
         show_tabs: true
     - name: test wb 2
-      file_path: Partner/testing_1.twbx
+      file_path: testing_.twbx
       project_path: tableau_git/contoh_2 
       partner_server: True
       option:
