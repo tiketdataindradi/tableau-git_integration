@@ -121,7 +121,7 @@ workbooks:
     - name: test internal
       file_path: testing_internal.twbx
       project_path: tableau_git/contoh_4 
-      partner_server: True
+      partner_server: False
       option:
         tags:
           - test twb 2
