@@ -106,6 +106,30 @@ workbooks:
         hidden_views:
       
         show_tabs: true
+    - name: test wb 4
+      file_path: testing_partner.twbx
+      project_path: tableau_git/contoh_4 
+      partner_server: True
+      option:
+        tags:
+          - test twb 2
+          - test server partner
+          - khrisanto
+        hidden_views:
+      
+        show_tabs: true
+    - name: test internal
+      file_path: testing_internal.twbx
+      project_path: tableau_git/contoh_4 
+      partner_server: False
+      option:
+        tags:
+          - test twb 2
+          - test server partner
+          - khrisanto
+        hidden_views:
+      
+        show_tabs: true
   
     
         

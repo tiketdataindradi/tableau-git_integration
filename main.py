@@ -206,6 +206,11 @@ def main(args):
                     logging.info(f"Error publishing workbook { workbook_schema['name'] }")
                     logging.error(e)
                     list_message.append(f"\nWorkbook : { workbook_schema['name'] } not published to Tableau   :x:")
+                    list_message.append("Please make sure: ")
+                    list_message.append("1. Workbook name in config file (workbooks.yml) is correct")
+                    list_message.append("2. Uploaded file is in .twbx format")
+                    list_message.append("3. Parameter 'patner_server' in config file (workbooks.yml) is correct")
+                   
                     status = False
               
             else:
