@@ -109,7 +109,7 @@ workbooks:
     - name: test wb 4
       file_path: testing_partner.twbx
       project_path: tableau_git/contoh_4 
-      partner_server: True
+      partner_server: False
       option:
         tags:
           - test twb 2
