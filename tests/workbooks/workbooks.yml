@@ -94,6 +94,18 @@ workbooks:
         hidden_views:
       
         show_tabs: true
+    - name: test wb 3
+      file_path: testing_2.twbx
+      project_path: tableau_git/contoh_3 
+      partner_server: True
+      option:
+        tags:
+          - test twb 2
+          - test server partner
+          - indradi.maulana@tiket.com
+        hidden_views:
+      
+        show_tabs: true
   
     
         
