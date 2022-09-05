@@ -94,7 +94,7 @@ workbooks:
         hidden_views:
       
         show_tabs: true
-    - name: test wb 3
+    - name: test wb khris
       file_path: testing_2.twbx
       project_path: tableau_git/contoh_3 
       partner_server: True
@@ -109,7 +109,7 @@ workbooks:
     - name: test wb 4
       file_path: testing_partner.twbx
       project_path: tableau_git/contoh_4 
-      partner_server: False
+      partner_server: True
       option:
         tags:
           - test twb 2
