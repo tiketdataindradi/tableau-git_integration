@@ -107,7 +107,7 @@ workbooks:
       
         show_tabs: true
     - name: test wb 4
-      file_path: testing_partner.twbx
+      file_path: testing_partner1.twbx
       project_path: tableau_git/contoh_4 
       partner_server: True
       option:
