@@ -11,7 +11,7 @@ import tableauserverclient as TSC
 import xml.dom.minidom as minidom
 from collections import defaultdict
 
-import automation_scripts.util as util
+import util as util
 
 API_VERSION = '3.9'
 

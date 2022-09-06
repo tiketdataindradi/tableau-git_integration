@@ -13,7 +13,7 @@ from pathlib import Path
 from github import Github
 import sys
 
-from automation_scripts.tableau_api import TableauApi
+from tableau_api import TableauApi
 
 
 logger = logging.getLogger()
