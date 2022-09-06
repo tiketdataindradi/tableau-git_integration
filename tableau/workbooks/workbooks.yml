@@ -1,0 +1,64 @@
+workbooks:
+    - name: test wb
+      file_path: Partner/wb_embedded_data.twbx
+      project_path: tableau_git/contoh_2 
+      partner_server: True
+      option:
+        tags:
+          - test twb
+          - test
+          - indradi
+        hidden_views:
+      
+        show_tabs: true
+    - name: test wb 2
+      file_path: testing_.twbx
+      project_path: tableau_git/contoh_2 
+      partner_server: True
+      option:
+        tags:
+          - test twb 2
+          - test server partner
+          - indradi
+        hidden_views:
+      
+        show_tabs: true
+    - name: test wb 3
+      file_path: testing_2.twbx
+      project_path: tableau_git/contoh_3 
+      partner_server: True
+      option:
+        tags:
+          - test twb 2
+          - test server partner
+          - indradi.maulana@tiket.com
+        hidden_views:
+      
+        show_tabs: true
+    - name: test wb 4
+      file_path: testing_partner1.twbx
+      project_path: tableau_git/contoh_4 
+      partner_server: True
+      option:
+        tags:
+          - test twb 2
+          - test server partner
+          - khrisanto
+        hidden_views:
+      
+        show_tabs: true
+    - name: test internal
+      file_path: testing_internal.twbx
+      project_path: tableau_git/contoh_4 
+      partner_server: False
+      option:
+        tags:
+          - test twb 2
+          - test server partner
+          - khrisanto
+        hidden_views:
+      
+        show_tabs: true
+    
+
+    
