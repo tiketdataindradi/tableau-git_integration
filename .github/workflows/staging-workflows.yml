@@ -1,10 +1,10 @@
-name: Tableau Workbook Workflows Staging
+name: Tableau Workbook Workflows Staging - Server Internal (Kagebunshin)
 on:
   pull_request:
       branches:
         - master
       paths:
-        - 'tests/workbooks/Kagebunshin/**'
+        - 'tests/workbooks/internal (kagebunshin)/**'
 jobs:
   tableau-validation-action:
     name: Tableau Workbook Staging Publisher
@@ -19,7 +19,7 @@ jobs:
           SITE_ID: ${{ secrets.SITE_ID }}
           TABLEAU_URL: ${{ secrets.TABLEAU_URL }}
         with:
-          workbook_dir: tests/workbooks/Kagebunshin
+          workbook_dir: tests/workbooks/internal (kagebunshin)
           env: staging
           repo_token: ${{ secrets.GITHUB_TOKEN }}
   

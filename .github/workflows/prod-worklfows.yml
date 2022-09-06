@@ -1,11 +1,11 @@
-name: Tableau Workbook Production Workflows
+name: Tableau Workbook Production Workflows - Server Internal (Kagebunshin)
 on:
   pull_request:
       branches:
         - master
       types: [closed]
       paths:
-        - 'tests/workbooks/Kagebunshin/**'
+        - 'tests/workbooks/internal (kagebunshin)/**'
 jobs:
   tableau-production-deployments:
     name: Tableau Workbook Production Deployments
@@ -23,6 +23,6 @@ jobs:
           SITE_ID: ${{ secrets.SITE_ID }}
           TABLEAU_URL: ${{ secrets.TABLEAU_URL }}
         with:
-          workbook_dir: tests/workbooks/Kagebunshin
+          workbook_dir: tests/workbooks/internal (kagebunshin)
           env: production
           repo_token: ${{ secrets.GITHUB_TOKEN }}
