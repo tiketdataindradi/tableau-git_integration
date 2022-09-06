@@ -48,7 +48,7 @@ workbooks:
       
         show_tabs: true
     - name: test internal
-      file_path: testing_internal.twbx
+      file_path: testing_internal_1.twbx
       project_path: tableau_git/contoh_4 
       partner_server: False
       option:
