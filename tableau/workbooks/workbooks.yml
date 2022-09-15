@@ -59,6 +59,16 @@ workbooks:
         hidden_views:
       
         show_tabs: true
+    - name: test lfs
+      file_path: Paylater Monitoring Dashboard 2.twbx
+      project_path: tableau_git/contoh_4 
+      partner_server: False
+      option:
+        tags:
+          - github lfs
+        hidden_views:
+      
+        show_tabs: true
     
 
     
