@@ -59,6 +59,17 @@ workbooks:
         hidden_views:
       
         show_tabs: true
+    - name: test internal 2
+      file_path: wb_published_data.twbx
+      project_path: tableau_git/contoh_4 
+      partner_server: False
+      option:
+        tags:
+          - test twb 2
+          - test server partner
+        hidden_views:
+      
+        show_tabs: true
     
 
     
