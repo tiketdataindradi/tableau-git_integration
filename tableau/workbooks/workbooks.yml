@@ -69,6 +69,16 @@ workbooks:
         hidden_views:
       
         show_tabs: true
+    - name: test adi published lfs
+      file_path: wb_published_data.twbx
+      project_path: tableau_git/contoh_4 
+      partner_server: False
+      option:
+        tags:
+          - test twbx
+        hidden_views:
+      
+        show_tabs: true
     
 
     
