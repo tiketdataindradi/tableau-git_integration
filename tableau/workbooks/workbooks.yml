@@ -65,7 +65,7 @@ workbooks:
       partner_server: False
       option:
         tags:
-          - github lfs
+          - github lfs 1
         hidden_views:
       
         show_tabs: true
