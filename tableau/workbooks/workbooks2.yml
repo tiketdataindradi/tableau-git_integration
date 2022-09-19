@@ -1,6 +1,6 @@
 workbooks:
     - name: test internal new yml
-      file_path: testing_internal_2.twbx
+      file_path: testing_internall_2.twbx
       project_path: tableau_git/contoh_4 
       partner_server: False
       option:
