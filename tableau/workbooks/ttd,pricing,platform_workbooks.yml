@@ -1,0 +1,24 @@
+workbooks:
+    - name: test internal new yml
+      file_path: testing_internal_2.twbx
+      project_path: tableau_git/contoh_4 
+      partner_server: False
+      option:
+        tags:
+          - test twb 2
+          - test server partner
+          - khrisanto
+        hidden_views:
+      
+        show_tabs: true
+    - name: test wb new yml partner
+      file_path: testing_partner2.twbx
+      project_path: tableau_git/contoh_4 
+      partner_server: True
+      option:
+        tags:
+          - test twb 2
+          - test server partner
+        hidden_views:
+      
+        show_tabs: true
