@@ -23,7 +23,7 @@ workbooks:
       
         show_tabs: true
     - name: wb_indradi
-      file_path: UAT_trial_indradi.twbx
+      file_path: UAT_trial_indradi2.twbx
       project_path: UAT/indradi
       partner_server: False
       option:
