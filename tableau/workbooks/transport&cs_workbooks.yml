@@ -22,8 +22,8 @@ workbooks:
         hidden_views:
       
         show_tabs: true
-    - name: wb_indradi
-      file_path: UAT_trial_indradi.twbx
+    - name: '[test] wb_indradi'
+      file_path: '[UAT]_trial_indradi_2.twbx'
       project_path: UAT/indradi
       partner_server: False
       option:
