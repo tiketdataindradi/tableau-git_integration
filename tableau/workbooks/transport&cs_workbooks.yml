@@ -22,7 +22,7 @@ workbooks:
         hidden_views:
       
         show_tabs: true
-    - name: [test] wb_indradi
+    - name: '[test] wb_indradi'
       file_path: UAT_trial_indradi_2.twbx
       project_path: UAT/indradi
       partner_server: False
