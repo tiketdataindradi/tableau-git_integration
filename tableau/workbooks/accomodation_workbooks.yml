@@ -22,3 +22,14 @@ workbooks:
         hidden_views:
       
         show_tabs: true
+    - name: BQ Table Cost Test
+      file_path: BQ Table Cost Test.twbx
+      project_path: Data Rangers/GCP Billing 
+      partner_server: False
+      option:
+        tags:
+          - test vela
+          - indradi
+        hidden_views:
+      
+        show_tabs: true
