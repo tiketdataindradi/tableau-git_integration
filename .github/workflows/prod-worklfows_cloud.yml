@@ -1,0 +1,28 @@
+name: Tableau Workbook Production Workflows - Cloud
+on:
+  pull_request:
+      branches:
+        - master
+      types: [closed]
+      paths:
+        - 'tableau/workbooks/cloud/**'
+jobs:
+  tableau-production-deployments:
+    name: Tableau Workbook Production Deployments to Cloud
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: 'Tableau Workbook Deployments Action'
+        uses: ./
+        env:
+          USERNAME:  ${{ secrets.USERNAME_CLOUD }}
+          PASSWORD: ${{ secrets.PASSWORD_CLOUD }}
+          SITE_ID: ${{ secrets.SITE_ID_CLOUD }}
+          TABLEAU_URL: ${{ secrets.TABLEAU_URL_CLOUD }}
+        with:
+          workbook_dir: tableau/workbooks/cloud
+          env: production
+          repo_token: ${{ secrets.GITHUB_TOKEN }}

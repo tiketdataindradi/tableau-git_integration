@@ -1,0 +1,25 @@
+name: Tableau Workbook Workflows Staging - Cloud
+on:
+  pull_request:
+      branches:
+        - master
+      paths:
+        - 'tableau/workbooks/cloud/**'
+jobs:
+  tableau-validation-action:
+    name: Tableau Workbook Staging Publisher to Cloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: 'Tableau Workbook Action' #This workflows expected to be error since no secrets vars provided
+        uses: ./
+        env:
+          USERNAME: ${{ secrets.USERNAME_CLOUD }}
+          PASSWORD: ${{ secrets.PASSWORD_CLOUD }}
+          SITE_ID: ${{ secrets.SITE_ID_CLOUD }}
+          TABLEAU_URL: ${{ secrets.TABLEAU_URL_CLOUD }}
+        with:
+          workbook_dir: tableau/workbooks/cloud
+          env: staging
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+  
