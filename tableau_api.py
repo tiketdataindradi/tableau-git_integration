@@ -60,7 +60,7 @@ class TableauApi:
 
     def list_all_data_sources(self):
         tableau_auth = TSC.TableauAuth(self.username, self.password)
-        server = TSC.Server(self.tableau_url)
+        server = TSC.Server(self.tableau_url, use_server_version=True)
 
         with server.auth.sign_in(tableau_auth):
             all_datasources, pagination_item = server.datasources.get()
@@ -75,7 +75,7 @@ class TableauApi:
 
     def list_all_workbooks(self):
         tableau_auth = TSC.TableauAuth(self.username, self.password)
-        server = TSC.Server(self.tableau_url)
+        server = TSC.Server(self.tableau_url, use_server_version=True)
 
         with server.auth.sign_in(tableau_auth):
             all_workbooks, pagination_item = server.workbooks.get()
@@ -90,7 +90,7 @@ class TableauApi:
 
     def get_workbook_detail(self, workbook_id):
         tableau_auth = TSC.TableauAuth(self.username, self.password)
-        server = TSC.Server(self.tableau_url)
+        server = TSC.Server(self.tableau_url, use_server_version=True)
 
         with server.auth.sign_in(tableau_auth):
             workbook = server.workbooks.get_by_id(workbook_id)
@@ -99,7 +99,7 @@ class TableauApi:
 
     def delete_workbook(self, workbook_id):
         tableau_auth = TSC.TableauAuth(self.username, self.password)
-        server = TSC.Server(self.tableau_url)
+        server = TSC.Server(self.tableau_url, use_server_version=True)
 
         with server.auth.sign_in(tableau_auth):
             response = server.workbooks.delete(workbook_id)
@@ -140,7 +140,7 @@ class TableauApi:
                                           parent_id=last_project_id)
 
             tableau_auth = TSC.TableauAuth(self.username, self.password)
-            server = TSC.Server(self.tableau_url)
+            server = TSC.Server(self.tableau_url, use_server_version=True)
             with server.auth.sign_in(tableau_auth):
                 new_project = server.projects.create(new_project)
                 last_project_id = new_project.id
@@ -150,7 +150,7 @@ class TableauApi:
     # Still figuring out how to put description in workbook via this api
     def publish_workbook(self, name, project_id, file_path, hidden_views = None, show_tabs = False, tags = None, description = None):
         tableau_auth = TSC.TableauAuth(self.username, self.password)
-        server = TSC.Server(self.tableau_url)
+        server = TSC.Server(self.tableau_url, use_server_version=True)
         server.auth.sign_in(tableau_auth)
         new_workbook = TSC.WorkbookItem(name = name, project_id = project_id, show_tabs=show_tabs)
         new_workbook = server.workbooks.publish(new_workbook, file_path, TSC.Server.PublishMode.Overwrite, hidden_views=hidden_views, skip_connection_check = True)
