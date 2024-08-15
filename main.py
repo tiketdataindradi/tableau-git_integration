@@ -129,11 +129,11 @@ def submit_workbook(workbook_schema, file_path, env, tableau_type):
             project_path = workbook_schema['project_path']
         
         if tableau_type == 'cloud':
-            tableau_api = TableauApiCloud(os.environ['USERNAME'],
-                                os.environ['PASSWORD'],
-                                os.environ['TABLEAU_URL'] + '/api/',
-                                os.environ['TABLEAU_URL'],
-                                os.environ['SITE_ID'], 
+            tableau_api = TableauApiCloud(os.environ['USERNAME_CLOUD'],
+                                os.environ['PASSWORD_CLOUD'],
+                                os.environ['TABLEAU_URL_CLOUD'] + '/api/',
+                                os.environ['TABLEAU_URL_CLOUD'],
+                                os.environ['SITE_ID_CLOUD'], 
                                 os.environ['PAT_NAME'],
                                 os.environ['PAT'],
                                 os.environ['SITE_NAME']
@@ -257,6 +257,7 @@ if __name__=='__main__':
     parser = argparse.ArgumentParser(allow_abbrev=False)
     parser.add_argument('--workbook_dir', action='store', type=str, required=False)
     parser.add_argument('--env', action = 'store', type = str, required = True)
+    parser.add_argument('--tableau_type', action = 'store', type = str, required = True)
     parser.add_argument('--repo_token', action = 'store', type=str, required = True)
 
     args = parser.parse_args()

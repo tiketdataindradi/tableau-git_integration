@@ -11,6 +11,9 @@ inputs:
   env:
     description: 'Target environments'
     required: true
+  tableau_type:
+    description: 'type of tableau'
+    required: true
   repo_token:
     description: 'Repo access token'
     required: true
@@ -20,4 +23,5 @@ runs:
   args:
     - ${{ inputs.workbook_dir}}
     - ${{ inputs.env }}
+    - ${{ inputs.tableau_type }}
     - ${{ inputs.repo_token }}

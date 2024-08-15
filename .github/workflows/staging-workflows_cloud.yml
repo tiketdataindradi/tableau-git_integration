@@ -14,10 +14,10 @@ jobs:
       - name: 'Tableau Workbook Action' #This workflows expected to be error since no secrets vars provided
         uses: ./
         env:
-          USERNAME: ${{ secrets.USERNAME_CLOUD }}
-          PASSWORD: ${{ secrets.PASSWORD_CLOUD }}
-          SITE_ID: ${{ secrets.SITE_ID_CLOUD }}
-          TABLEAU_URL: ${{ secrets.TABLEAU_URL_CLOUD }}
+          USERNAME_CLOUD: ${{ secrets.USERNAME_CLOUD }}
+          PASSWORD_CLOUD: ${{ secrets.PASSWORD_CLOUD }}
+          SITE_ID_CLOUD: ${{ secrets.SITE_ID_CLOUD }}
+          TABLEAU_URL_CLOUD: ${{ secrets.TABLEAU_URL_CLOUD }}
           PAT_NAME: ${{ secrets.PAT_NAME_CLOUD }}
           PAT: ${{ secrets.PAT_CLOUD }}
           SITE_NAME: ${{ secrets.SITE_NAME_CLOUD }}
