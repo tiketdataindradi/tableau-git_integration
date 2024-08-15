@@ -40,6 +40,8 @@ class TableauApiCloud:
             </credentials>
         </tsRequest>"""
         response = requests.post(f'{self.tableau_api_url}3.22/auth/signin', data=payload)
+        print(response)
+        print(response.text)
         doc = minidom.parseString(response.text)
         return doc.getElementsByTagName('credentials')[0].getAttribute("token")
 
