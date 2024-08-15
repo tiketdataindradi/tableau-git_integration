@@ -258,6 +258,7 @@ if __name__=='__main__':
     parser = argparse.ArgumentParser(allow_abbrev=False)
     parser.add_argument('--workbook_dir', action='store', type=str, required=False)
     parser.add_argument('--env', action = 'store', type = str, required = True)
+    parser.add_argument('--tableau_type', action = 'store', type = str, required = True)
     parser.add_argument('--repo_token', action = 'store', type=str, required = True)
 
     args = parser.parse_args()
