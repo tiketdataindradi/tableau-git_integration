@@ -35,7 +35,7 @@ class TableauApi:
             <site contentUrl="" />
           </credentials>
         </tsRequest>"""
-        response = requests.post(f'{self.tableau_api_url}{API_VERSION}/auth/signin', data=payload)
+        response = requests.post(f'{self.tableau_api_url}/3.9/auth/signin', data=payload)
         doc = minidom.parseString(response.text)
         print(response.text)
         return doc.getElementsByTagName('credentials')[0].getAttribute("token")
