@@ -23,7 +23,7 @@ workbooks:
       
         show_tabs: true
     - name: BQ Table Cost 
-      file_path: BQ Table Cost Test.twbx
+      file_path: BQ Table Cost Test2.twbx
       project_path: GCP Billing 
       partner_server: False
       option:

@@ -14,6 +14,7 @@ from github import Github
 import sys
 
 from tableau_api import TableauApi
+from tableau_api_cloud import TableauApiCloud
 
 
 logger = logging.getLogger()
@@ -70,7 +71,7 @@ def get_addmodified_files(repo_token):
     return list_files
 
 
-def submit_workbook(workbook_schema, file_path, env):
+def submit_workbook(workbook_schema, file_path, env, tableau_type):
     partner_server = workbook_schema['partner_server'] if 'partner_server' in workbook_schema else False
 
     if partner_server == True: 
@@ -126,12 +127,24 @@ def submit_workbook(workbook_schema, file_path, env):
         
         else: 
             project_path = workbook_schema['project_path']
-
-        tableau_api = TableauApi(os.environ['USERNAME'],
+        
+        if tableau_type == 'cloud':
+            tableau_api = TableauApiCloud(os.environ['USERNAME'],
                                 os.environ['PASSWORD'],
                                 os.environ['TABLEAU_URL'] + '/api/',
                                 os.environ['TABLEAU_URL'],
-                                os.environ['SITE_ID'])
+                                os.environ['SITE_ID'], 
+                                os.environ['PAT_NAME'],
+                                os.environ['PAT'],
+                                os.environ['SITE_NAME']
+                                )
+        else:
+            tableau_api = TableauApi(os.environ['USERNAME'],
+                                    os.environ['PASSWORD'],
+                                    os.environ['TABLEAU_URL'] + '/api/',
+                                    os.environ['TABLEAU_URL'],
+                                    os.environ['SITE_ID'])
+
         project_id = tableau_api.get_project_id_by_path_with_tree(project_path)
 
         if project_id is None:
@@ -193,7 +206,9 @@ def main(args):
                     logging.info(f"Publishing workbook : { workbook_schema['project_path'] + '/' + workbook_schema['name'] } to Tableau")
                     project_path, new_workbook = submit_workbook(workbook_schema,
                                                                 args.workbook_dir + "/" + file,
-                                                                args.env)
+                                                                args.env, 
+                                                                args.tableau_type
+                                                                )
                     if args.env != 'production':
                         logging.info(f"Workbook : { workbook_schema['name']} Published to Tableau folder sandbox")
                         list_message.append(f"\nWorkbook : {workbook_schema['name']} published to Tableau folder sandbox:heavy_check_mark:")

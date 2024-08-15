@@ -13,29 +13,33 @@ from collections import defaultdict
 
 import util as util
 
-API_VERSION = '3.9'
+API_VERSION = '3.22'
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 logging.basicConfig(format='%(asctime)s %(message)s')
 
 
-class TableauApi:
-    def __init__(self, username, password, tableau_api_url, tableau_url, site_id):
+class TableauApiCloud:
+    def __init__(self, username, password, tableau_api_url, tableau_url, site_id, pat_name, pat, site_name):
         self.username = username
         self.password = password
         self.tableau_api_url = tableau_api_url
         self.tableau_url = tableau_url
         self.site_id = site_id
-
+        self.pat_name = pat_name
+        self.pat = pat
+        self.site_name = site_name
+    
     def sign_in(self):
         payload = \
         f"""<tsRequest>
-          <credentials name="{ self.username }" password="{ self.password }" >
-            <site contentUrl="" />
-          </credentials>
+                <credentials
+                    personalAccessTokenName="{ self.pat_name }" personalAccessTokenSecret="{ self.pat_name }" >
+                <site contentUrl="{ self.site_name }" />
+            </credentials>
         </tsRequest>"""
-        response = requests.post(f'{self.tableau_api_url}{API_VERSION}/auth/signin', data=payload)
+        response = requests.post(f'{self.tableau_api_url}3.22/auth/signin', data=payload)
         doc = minidom.parseString(response.text)
         return doc.getElementsByTagName('credentials')[0].getAttribute("token")
 
@@ -58,8 +62,8 @@ class TableauApi:
 
 
     def list_all_data_sources(self):
-        tableau_auth = TSC.TableauAuth(self.username, self.password)
-        server = TSC.Server(self.tableau_url)
+        tableau_auth = TSC.PersonalAccessTokenAuth(self.pat_name, self.pat , self.site_name)
+        server = TSC.Server(self.tableau_url, use_server_version=True)
 
         with server.auth.sign_in(tableau_auth):
             all_datasources, pagination_item = server.datasources.get()
@@ -73,8 +77,8 @@ class TableauApi:
 
 
     def list_all_workbooks(self):
-        tableau_auth = TSC.TableauAuth(self.username, self.password)
-        server = TSC.Server(self.tableau_url)
+        tableau_auth = TSC.PersonalAccessTokenAuth(self.pat_name, self.pat , self.site_name)
+        server = TSC.Server(self.tableau_url, use_server_version=True)
 
         with server.auth.sign_in(tableau_auth):
             all_workbooks, pagination_item = server.workbooks.get()
@@ -88,8 +92,8 @@ class TableauApi:
 
 
     def get_workbook_detail(self, workbook_id):
-        tableau_auth = TSC.TableauAuth(self.username, self.password)
-        server = TSC.Server(self.tableau_url)
+        tableau_auth = TSC.PersonalAccessTokenAuth(self.pat_name, self.pat , self.site_name)
+        server = TSC.Server(self.tableau_url, use_server_version=True)
 
         with server.auth.sign_in(tableau_auth):
             workbook = server.workbooks.get_by_id(workbook_id)
@@ -97,8 +101,8 @@ class TableauApi:
 
 
     def delete_workbook(self, workbook_id):
-        tableau_auth = TSC.TableauAuth(self.username, self.password)
-        server = TSC.Server(self.tableau_url)
+        tableau_auth = TSC.PersonalAccessTokenAuth(self.pat_name, self.pat , self.site_name)
+        server = TSC.Server(self.tableau_url, use_server_version=True)
 
         with server.auth.sign_in(tableau_auth):
             response = server.workbooks.delete(workbook_id)
@@ -138,8 +142,8 @@ class TableauApi:
                                           content_permissions=TSC.ProjectItem.ContentPermissions.ManagedByOwner,
                                           parent_id=last_project_id)
 
-            tableau_auth = TSC.TableauAuth(self.username, self.password)
-            server = TSC.Server(self.tableau_url)
+            tableau_auth = TSC.PersonalAccessTokenAuth(self.pat_name, self.pat , self.site_name)
+            server = TSC.Server(self.tableau_url, use_server_version=True)
             with server.auth.sign_in(tableau_auth):
                 new_project = server.projects.create(new_project)
                 last_project_id = new_project.id
@@ -148,8 +152,8 @@ class TableauApi:
 
     # Still figuring out how to put description in workbook via this api
     def publish_workbook(self, name, project_id, file_path, hidden_views = None, show_tabs = False, tags = None, description = None):
-        tableau_auth = TSC.TableauAuth(self.username, self.password)
-        server = TSC.Server(self.tableau_url)
+        tableau_auth = TSC.PersonalAccessTokenAuth(self.pat_name, self.pat , self.site_name)
+        server = TSC.Server(self.tableau_url, use_server_version=True)
         server.auth.sign_in(tableau_auth)
         new_workbook = TSC.WorkbookItem(name = name, project_id = project_id, show_tabs=show_tabs)
         new_workbook = server.workbooks.publish(new_workbook, file_path, TSC.Server.PublishMode.Overwrite, hidden_views=hidden_views, skip_connection_check = True)
