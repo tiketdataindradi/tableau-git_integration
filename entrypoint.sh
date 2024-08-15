@@ -2,11 +2,12 @@
 
 echo "Workbook Directory : $1"
 echo "Environment : $2"
-echo "Repo Token : $3"
+echo "Tableau Type : $3"
+echo "Repo Token : $4"
 
 cp -r /action/* /github/workspace/
 
-python main.py --workbook_dir=$1 --env=$2 --repo_token=$3
+python main.py --workbook_dir=$1 --env=$2 --tableau_type=$3 --repo_token=$4
 
 exit_status=$?
 if [ "${exit_status}" -ne 0 ];
