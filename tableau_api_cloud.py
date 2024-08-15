@@ -35,7 +35,7 @@ class TableauApiCloud:
         payload = \
         f"""<tsRequest>
                 <credentials
-                    personalAccessTokenName="{ self.pat_name }" personalAccessTokenSecret="{ self.pat_name }" >
+                    personalAccessTokenName="{ self.pat_name }" personalAccessTokenSecret="{ self.pat }" >
                 <site contentUrl="{ self.site_name }" />
             </credentials>
         </tsRequest>"""
