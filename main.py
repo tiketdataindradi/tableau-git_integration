@@ -185,6 +185,7 @@ def submit_workbook(workbook_schema, file_path, env, tableau_type):
 def main(args):
     logging.info(f"Workbook Dir : { args.workbook_dir }")
     logging.info(f"Environments : { args.env }")
+    print(vars(args))
 
     full_schema_config = get_full_schema(args.workbook_dir)
 
