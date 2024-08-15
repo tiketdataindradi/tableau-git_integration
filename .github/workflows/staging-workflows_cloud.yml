@@ -18,8 +18,12 @@ jobs:
           PASSWORD: ${{ secrets.PASSWORD_CLOUD }}
           SITE_ID: ${{ secrets.SITE_ID_CLOUD }}
           TABLEAU_URL: ${{ secrets.TABLEAU_URL_CLOUD }}
+          PAT_NAME: ${{ secrets.PAT_NAME_CLOUD }}
+          PAT: ${{ secrets.PAT_CLOUD }}
+          SITE_NAME: ${{ secrets.SITE_NAME_CLOUD }}
         with:
           workbook_dir: tableau/workbooks/cloud
           env: staging
+          tableau_type: cloud
           repo_token: ${{ secrets.GITHUB_TOKEN }}
   

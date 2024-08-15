@@ -21,4 +21,5 @@ jobs:
         with:
           workbook_dir: tableau/workbooks/partner
           env: staging
+          tableau_type: server
           repo_token: ${{ secrets.GITHUB_TOKEN }}
