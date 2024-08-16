@@ -35,9 +35,8 @@ class TableauApi:
             <site contentUrl="" />
           </credentials>
         </tsRequest>"""
-        response = requests.post(f'{self.tableau_api_url}{API_VERSION}/auth/signin', data=payload)
+        response = requests.post(f'{self.tableau_api_url}/3.9/auth/signin', data=payload)
         doc = minidom.parseString(response.text)
-        print(self.password, self.tableau_api_url)
         return doc.getElementsByTagName('credentials')[0].getAttribute("token")
 
 
@@ -48,6 +47,8 @@ class TableauApi:
         }
         response = requests.get(f'{self.tableau_api_url}{API_VERSION}/sites/{self.site_id}/projects?pageSize=1000', headers=headers)
         all_projects_response = xmltodict.parse(response.text)
+        print(response)
+        print(response.text)
         try:
             all_projects_response = all_projects_response['tsResponse']
             all_projects = all_projects_response['projects']['project']
